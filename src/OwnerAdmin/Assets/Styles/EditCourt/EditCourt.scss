@@ -1,0 +1,74 @@
+$greyBorder:rgb(236,237,237);
+$greyBorderHead:rgb(191,190,190);
+
+.edit-court-container{
+    width: 620px;
+    height: 700px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+    border: 1px solid $greyBorder;
+    padding: 20px;
+}
+.edit-court-checkbox-container{
+    display: flex;
+    margin: 15px 30px 15px 0px;
+}
+.edit-court-checkbox-container h5{
+    margin-left: 5px;
+    margin-top: 3px;
+}
+.edit-court-container input{
+    width: 100%;
+    max-width: 430px;
+    margin-top: 10px;
+}
+.next-button{
+    margin-left: 20px;
+}
+.edit-court-images-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.edit-court-image-container{
+    width: 190px;
+    height: 160px;
+    margin: 10px auto;
+    background-color: white;
+    border: 1px solid $greyBorder;
+    border-radius: 3px;
+    padding: 5px;
+}
+.edit-court-image{
+    width: 100%;
+}
+.edit-court-image-container div{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+.edit-court-amenities-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.edit-court-amenity{
+    display: flex;
+    width: 50%;
+    min-width: 200px;
+    margin-top: 15px;
+}
+.edit-court-amenity h5{
+    margin-top: 3px;
+    margin-left: 3px;
+}
+.edit-court-finish{
+    display: flex;
+    align-items: center;
+}
+.edit-court-finish span{
+    font-size: 40px;
+    margin-right: 10px;
+    margin-top: -5px;
+}

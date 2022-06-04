@@ -1,0 +1,15 @@
+.my-games-card-container{
+    display: flex;
+    min-height: 100px;
+    padding: 10px;
+    margin-top: 10px;
+}
+.my-games-card-info{
+    width: 100%;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.slot-details-dots-icon{
+    transform: rotate(90deg);
+}

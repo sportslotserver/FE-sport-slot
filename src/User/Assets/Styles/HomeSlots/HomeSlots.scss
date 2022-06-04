@@ -1,0 +1,21 @@
+$titleColor: rgb(240,103,35);
+$inputBorderColor: rgb(215,215,215);
+$buttonColor: rgb(55,180,74);
+$primaryTextColor: black;
+$secondaryTextColor: rgb(120,120,120);
+
+.home-slots-main-container{
+    width: 100%;
+}
+.home-slots-container{
+    justify-content: center;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill,minmax(210px, 1fr));
+}
+.home-slots-pages-container{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+

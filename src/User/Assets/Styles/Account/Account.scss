@@ -1,0 +1,29 @@
+$headingColor: #EF6723;
+$greyBorder:rgb(215,215,215);
+
+.account-container{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+}
+.account-menu{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    border-bottom: 1px solid $greyBorder;
+}
+.account-menu-item{
+    margin-right: 30px;
+    height: 100%;
+    font-size: 26px;
+    border-bottom: 4px solid transparent;
+    cursor: pointer;
+}
+.account-menu-selected-item{
+    margin-right: 30px;
+    height: 100%;
+    font-size: 26px;
+    border-bottom: 6px solid $headingColor;
+    cursor: pointer;
+}

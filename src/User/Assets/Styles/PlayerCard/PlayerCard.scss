@@ -1,0 +1,55 @@
+$titleColor: rgb(240,103,35);
+$inviteButtonColor: rgb(237,237,237);
+$buttonColor: rgb(55,180,74);
+$primaryTextColor: black;
+$secondaryTextColor: rgb(120,120,120);
+$cardBorderColor: rgb(237,237,237);
+
+.player-card-container-vertical{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80%;
+    max-width: 100%;
+    padding-top: 10px;
+    margin-top: 30px;
+    border: none;
+    border-right: 1px solid $cardBorderColor;
+    padding: 10px;
+}
+.player-card-container-horizontal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    padding: 5px 15px;
+    margin: 5px;
+    border: 1px solid $cardBorderColor;
+}
+.player-card-child-horizontal{
+    display: flex;
+    margin-left: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.player-card-child-vertical{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.player-card-image{
+    width: 60px;
+    height: 60px;
+}
+.player-card-button{
+    height: 30px;
+    background-color: $inviteButtonColor;
+    border-radius: 15px;
+    border: 2px solid $inviteButtonColor;
+    font-size: 16px;
+    color: $secondaryTextColor;
+}
+.margin-top-20{
+    margin: 20px auto;
+}

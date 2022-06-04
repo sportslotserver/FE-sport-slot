@@ -1,0 +1,67 @@
+$buttonColor: rgb(55,180,74);
+
+.personal-info-input-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 430px;
+}
+.personal-info-input-container input{
+    margin-top: 10px;
+}
+.personal-info-input-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 30px;
+    align-items: center;
+    margin-top: 20px;
+}
+.personal-info-input-footer{
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    align-items: center;
+    margin-top: 20px;
+}
+.personal-info-input-footer b{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+/****************************/
+.personal-info-id-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 430px;
+}
+.personal-info-id-container input{
+    margin-top: 10px;
+}
+.personal-info-id-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 30px;
+    align-items: center;
+    margin-top: 20px;
+}
+.personal-info-id-footer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.upload-id-button{
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: 200px;
+    height: 40px;
+    background-color: $buttonColor;
+    border-radius: 10px;
+    border: 2px solid $buttonColor;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    min-width: 100px;
+    margin-bottom: 10px;
+}

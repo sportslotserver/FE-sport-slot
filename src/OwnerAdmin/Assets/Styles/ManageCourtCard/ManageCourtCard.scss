@@ -1,0 +1,20 @@
+$greyBorder:rgb(236,237,237);
+
+.manage-court-card-container{
+    width: 100%;
+    max-width: 400px;
+    height: 90px;
+    background-color: white;
+    border: 1px solid $greyBorder;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+.manage-court-card-container img{
+    width: 60px;
+    height: 60px;
+    margin: 15px;
+}
+.manage-court-card-container div{
+    width: 100%;
+}

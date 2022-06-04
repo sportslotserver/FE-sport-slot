@@ -1,0 +1,33 @@
+$buttonColor: rgb(55,180,74);
+$greyBorder:rgb(236,237,237);
+$headingColor: #EF6723;
+
+.owner-admin-court-card-container-link{
+    text-decoration: none;
+}
+.owner-admin-court-card-container{
+    border: 1px solid $greyBorder;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    padding: 20px;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.owner-admin-court-card-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.owner-admin-court-card-content{
+    width: 100%;
+    margin-left: 10px;
+}
+.owner-admin-court-card-content-title{
+    color: $headingColor;
+    font-family: 'Libre Franklin' !important;
+    font-size: 36px !important;
+    font-weight: bold !important;
+}

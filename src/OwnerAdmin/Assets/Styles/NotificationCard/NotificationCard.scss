@@ -1,0 +1,66 @@
+$acceptButtonColor: rgb(55,180,74);
+$declineButtonColor: rgb(217,217,216);
+$cardBorderColor: rgb(234,236,236);
+
+.notification-card-main-container{
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid $cardBorderColor;
+    margin-bottom: 10px;
+}
+.notification-card-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    margin-left: 10px;
+}
+.notification-card-container-left{
+    width: 50%;
+    height: 100%;
+}
+.notification-card-container-right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+}
+.notification-card-container-right div{
+    width: 100%;
+    margin-top: 10px;
+    text-align: right;
+}
+.accept-button{
+    height: 30px;
+    background-color: $acceptButtonColor;
+    border-radius: 15px;
+    border: 2px solid $acceptButtonColor;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    min-width: 100px;
+}
+.accept-button:hover{
+    background-color: white;
+    color: $acceptButtonColor;
+}
+.decline-button{
+    margin-left: 20px;
+    height: 30px;
+    background-color: $declineButtonColor;
+    border-radius: 15px;
+    border: 2px solid $declineButtonColor;
+    font-size: 16px;
+    color: #4b4b4b;
+    font-weight: bold;
+    min-width: 100px;
+}
+.decline-button:hover{
+    background-color: #4b4b4b;
+    border: 2px solid #4b4b4b;
+    color: $declineButtonColor;
+}
+.new-price{
+    font-size: 10px;
+}

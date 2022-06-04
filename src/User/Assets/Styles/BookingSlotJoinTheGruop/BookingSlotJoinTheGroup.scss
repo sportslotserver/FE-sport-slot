@@ -1,0 +1,49 @@
+$backgroundColor: rgb(55,180,74);
+$textColor: white;
+
+.booking-slot-join-the-group-container{
+    background-color: $backgroundColor;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    border: 1px solid $backgroundColor;
+    margin: 10px;
+    width: 100%;
+}
+.booking-slot-join-the-group-heading-1{
+    color: $textColor;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.booking-slot-join-the-group-text{
+    color: $textColor;
+    font-size: 15px;
+    margin-top: 5px;
+}
+.booking-slot-join-the-group-divider{
+    width: 90%;
+    background-color: $textColor;
+    margin: 25px auto;
+}
+.booking-slot-join-the-group-heading-2{
+    color: $textColor;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.bold-2{
+    font-weight: bold;
+    color: $textColor;
+}
+.booking-slot-join-the-group-button{
+    height: 35px;
+    background-color: $textColor;
+    border-radius: 17px;
+    border: 2px solid $textColor;
+    font-size: 15px;
+    color: $backgroundColor;
+    width: 120px;
+    font-weight: bolder;
+}

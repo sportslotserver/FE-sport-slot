@@ -1,0 +1,63 @@
+$titleColor: rgb(240,103,35);
+$inputBorderColor: rgb(215,215,215);
+$buttonColor: rgb(55,180,74);
+$primaryTextColor: black;
+$secondaryTextColor: rgb(120,120,120);
+$cardBorderColor: rgb(237,237,237);
+
+.slot-card-container{
+    min-width: 200px;
+    background-color: white;
+    margin:10px auto;
+    padding: 5px;
+    padding-top: 10px;
+    border: 1px solid $cardBorderColor;
+    border-radius: 5px;
+}
+.slot-card-image{
+    width: 100%;
+}
+.slot-card-title{
+    max-width: 200px;
+    font-weight: bold;
+    color: $primaryTextColor;
+    font-size: 16px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.slot-card-text{
+    max-width: 200px;
+    color: $secondaryTextColor;
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.slot-card-footer{
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+}
+.slot-card-footer-button{
+    height: 35px;
+    background-color: $buttonColor;
+    border-radius: 17px;
+    border: 2px solid $buttonColor;
+    font-size: 16px;
+    color: white;
+    margin-top: 5px;
+    width: 100px;
+    font-weight: bolder;
+}
+.slot-card-footer-price{
+    color: $buttonColor;
+    font-size: 22px;
+}
+.slot-card-footer-per{
+    color: $secondaryTextColor;
+    font-size: 10px;
+}
+@media screen and(max-width: 768px) {
+    .slot-card-container{
+        min-width: 180px;
+    }
+}

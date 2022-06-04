@@ -1,0 +1,122 @@
+/*variables*/
+$navbarColor: black;
+$navbarHeight: 90px;
+$navbarTextColor: white;
+$greyBorder:rgb(215,215,215);
+
+
+.nav-logo-img{
+    margin-top: 0px;
+    height: 50px;
+}
+.nav-logo-text{
+    margin-top: 5px;
+    margin-left: 22px;
+    font-size: 27px;
+    font-weight: 500;
+}
+
+/*navbar lg*/
+.navbar-container-lg{
+    display: flex;
+    height: $navbarHeight;
+    background-color: $navbarColor;
+}
+.navbar-lg{
+    display: flex;
+    justify-content: space-between;
+    max-width: 90%;
+    flex-direction: row;
+    height: $navbarHeight;
+    margin: 0 auto;
+}
+.nav-logo-lg{
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    height: $navbarHeight;
+}
+.nav-options-lg{
+    display: flex;
+    align-items: center;
+    height: $navbarHeight;
+}
+.nav-option-lg{
+    color: $navbarTextColor;
+    margin-left: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+/*navbar -xs-sm-md*/
+.navbar-container-xs-sm-md{
+    display: flex;
+    height: $navbarHeight;
+    background-color: $navbarColor;
+}
+.navbar-xs-sm-md{
+    display: flex;
+    justify-content: space-between;
+    max-width: 960px;
+    flex-direction: row;
+    height: $navbarHeight;
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.nav-logo-xs-sm-md{
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    height: $navbarHeight;
+}
+.nav-button-xs-sm-md{
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: $navbarColor;
+    border: none;
+    font-size: 25px;
+    color: $navbarTextColor;
+}
+.menu-xs-sm-md{
+    display: none;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    border-top: 1px solid white;
+}
+.nav-option-xs-sm-md{
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 50px;
+    background-color: $navbarColor;
+    height: 40px;
+    color: $navbarTextColor;
+    text-decoration: none;
+    font-size: 14px;
+}
+.nav-user-option-xs-sm-md{
+    width: 100%;
+    padding-bottom: 70px;
+    padding-left: 50px;
+    background-color: $navbarColor;
+    height: 50px;
+    color: $navbarTextColor;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.navbar-user-menu{
+    width: 250px;
+    background-color: white;
+    position: fixed;
+    right: 50px;
+    border-radius: 3px;
+    border: 1px solid $greyBorder;
+    z-index: 10000;
+}
+.navbar-user-menu h4{
+    margin: 20px 15px;
+}

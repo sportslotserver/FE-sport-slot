@@ -1,0 +1,63 @@
+$buttonColor: rgb(55,180,74);
+$greyBorder:rgb(215,215,215);
+
+.payments-top-container{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $greyBorder;
+    
+}
+.payments-top-container h4{
+    padding-bottom: 20px;
+}
+.payment-button{
+    width: 200px;
+    height: 40px;
+    background-color: $buttonColor;
+    border-radius: 10px;
+    border: 2px solid $buttonColor;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    min-width: 100px;
+    margin-bottom: 10px;
+}
+.payments-container{
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+/**************************************/
+
+.payment-card-container{
+    width: 100%;
+    background-color: white;
+    border: 1px solid $greyBorder;
+    padding: 10px;
+    display: flex;
+    margin-top: 10px;
+}
+.payment-card-container img{
+    width: 45px;
+    height: 45px;
+}
+.payment-card-content-container{
+    width: 100%;
+    display: flex;
+    margin-left: 10px;
+}
+.payment-card-content-left-container{
+    width: 100%;
+}
+.payment-card-content-right-container{
+    width: 80px;
+    text-align: right;
+}
+.payment-card-content-right-container h5{
+    margin-top: 10px;
+}
+.payments-footer-container{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}

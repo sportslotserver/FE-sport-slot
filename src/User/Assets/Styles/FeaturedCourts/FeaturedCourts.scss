@@ -1,0 +1,26 @@
+$titleColor: rgb(240,103,35);
+$inputBorderColor: rgb(215,215,215);
+$buttonColor: rgb(55,180,74);
+$primaryTextColor: black;
+$secondaryTextColor: rgb(120,120,120);
+
+.home-featured-courts-main-container{
+    width: 100%;
+}
+.home-featured-courts-container{
+    justify-content: center;
+    display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(280px, 1fr));
+}
+.home-featured-courts-pages-container{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+.home-featured-courts-title{
+    font-size: 30px;
+    font-weight: bolder;
+    color: $titleColor;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}

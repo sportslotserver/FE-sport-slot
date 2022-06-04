@@ -1,0 +1,47 @@
+$buttonOnColor: rgb(55,180,74);
+$buttonOffColor: #EF6723;
+
+.switch-button-container{
+    width: 65px;
+    background-color: white;
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 18px;
+    padding: 1px;
+}
+.on-off-switch{
+    width: 40px;
+    height: 40px;
+    border-radius: 18px;
+    color: white;
+    text-align: center;
+    padding-top: 8px;
+    cursor: pointer;
+}
+.turn-on{
+    animation: turnOn forwards;
+    animation-duration: 0.4s;
+}
+@keyframes turnOn{
+    from{
+        background-color: $buttonOffColor;
+        margin-left: 0px;
+    }
+    to{
+        background-color: $buttonOnColor;
+        margin-left: 20px;
+    }
+}
+.turn-off{
+    animation: turnOff forwards;
+    animation-duration: 0.4s;
+}
+@keyframes turnOff{
+    from{
+        background-color: $buttonOnColor;
+        margin-left: 20px;
+    }
+    to{
+        background-color: $buttonOffColor;
+        margin-left: 0px;
+    }
+}

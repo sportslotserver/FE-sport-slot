@@ -1,0 +1,49 @@
+$textColor: rgb(55,180,74);
+$backgroundColor: white;
+
+.booking-slot-share-the-cost-container{
+    background-color: $backgroundColor;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    border: 1px solid rgb(215,215,215);
+    margin: 10px;
+    width: 100%;
+}
+.booking-slot-share-the-cost-heading-1{
+    color: $textColor;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.booking-slot-share-the-cost-text{
+    color: grey;
+    font-size: 15px;
+    margin-top: 5px;
+}
+.booking-slot-share-the-cost-divider{
+    width: 90%;
+    background-color: grey;
+    margin: 25px auto;
+}
+.booking-slot-share-the-cost-heading-2{
+    color: $textColor;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.bold-2{
+    font-weight: bold;
+    color: $textColor;
+}
+.booking-slot-share-the-cost-button{
+    height: 35px;
+    background-color: $textColor;
+    border-radius: 17px;
+    border: 2px solid $textColor;
+    font-size: 15px;
+    color: $backgroundColor;
+    width: 120px;
+    font-weight: bolder;
+}

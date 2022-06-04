@@ -1,0 +1,23 @@
+$secondaryTextColor: rgb(120,120,120);
+$titleColor: rgb(240,103,35);
+$greenTextColor: rgb(55,180,74);
+
+.cancellation-policy-container{
+    width: 100%;
+    padding: 10px;
+}
+.cancellation-policy-title{
+    font-size: 30px;
+    font-weight: bolder;
+    color: $titleColor;
+    margin-bottom: 10px;
+}
+.cancellation-policy-text{
+    color: $secondaryTextColor;
+}
+.cancellation-policy-green-text{
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: $greenTextColor;
+}

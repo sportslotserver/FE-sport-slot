@@ -1,0 +1,52 @@
+$titleColor: rgb(240,103,35);
+$inputBorderColor: rgb(215,215,215);
+$buttonColor: rgb(55,180,74);
+$primaryTextColor: black;
+$secondaryTextColor: rgb(120,120,120);
+
+.pagination-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    padding: 10px;
+    height: 30px;
+    border: 1px solid $inputBorderColor;
+    border-radius: 3px;
+    margin: 5px;
+    text-align: center;
+}
+.pagination-item:hover{
+    background-color: $inputBorderColor;
+    color:white;
+}
+.pagination-item-link{
+    text-decoration: none;
+    color: $secondaryTextColor;
+    cursor: default;
+}
+.pagination-item-link:hover{
+    text-decoration: none;
+    color: $secondaryTextColor;
+}
+.pagination-item-active{
+    background-color: $buttonColor;
+}
+.pagination-item-active:hover{
+    background-color: $buttonColor;
+}
+.pagination-item-link-active{
+    color: white;
+}
+.pagination-item-link-active:hover{
+    color: white;
+}
+.pagination-item-perv, .pagination-item-next, .pagination-item-first, .pagination-item-last{
+    font-size: 20px;
+}
+
+@media screen and(max-width: 768px) {
+    .pagination-item{
+    width: 25px;
+    }
+}

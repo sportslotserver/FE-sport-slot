@@ -1,0 +1,56 @@
+$titleColor: rgb(240,103,35);
+$inputBorderColor: rgb(215,215,215);
+$buttonColor: rgb(55,180,74);
+$primaryTextColor: black;
+$secondaryTextColor: rgb(120,120,120);
+
+.booking-slot-info-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(270px, 1fr));
+    border-bottom: 1px solid grey;
+}
+
+/*@media screen and (max-width: 762px){
+    .booking-slot-info-container{
+        flex-direction: column;
+    }
+    .booking-slot-info-child{
+        width: 100%;
+        min-width: none;
+    }
+}*/
+.booking-slot-info-child{
+    min-width: 300px;
+    min-width: 50%;
+    padding: 10px;
+}
+.court-name{
+    color: $titleColor;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: 0px;
+}
+.court-price{
+    color: $buttonColor;
+    font-size: 22px;
+}
+.court-price-span{
+    color: $secondaryTextColor;
+    font-size: 10px;
+    margin-left: 5px;
+}
+/*.booking-slot-info-child div{
+    color: $secondaryTextColor;
+    font-size: 13px;
+}*/
+.booking-slot-info-child img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+.owner-name{
+    position: relative;
+    top:20px
+}

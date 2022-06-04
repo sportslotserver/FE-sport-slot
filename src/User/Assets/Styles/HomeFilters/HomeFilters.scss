@@ -1,0 +1,31 @@
+$titleColor: rgb(240,103,35);
+$inputBorderColor: rgb(215,215,215);
+$buttonColor: rgb(55,180,74);
+$secondaryTextColor: rgb(120,120,120);
+
+.home-filters-container{
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.home-filters-title{
+    font-weight: bolder;
+}
+.home-filters-items{
+    display: flex;
+    flex-wrap: wrap;
+}
+.home-filters-item{
+    padding: 10px;
+    color: $secondaryTextColor;
+    font-size: 14px;
+}
+.home-filters-radio{
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top:2px;
+    accent-color: $buttonColor;
+    
+}

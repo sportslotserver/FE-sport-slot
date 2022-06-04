@@ -1,0 +1,76 @@
+$titleColor: rgb(240,103,35);
+$inputBorderColor: rgb(215,215,215);
+$buttonColor: rgb(55,180,74);
+$primaryTextColor: black;
+$secondaryTextColor: rgb(120,120,120);
+$scrollbarTrackColor: rgb(233,233,233);
+$scrollbarThumbColor: rgb(215,215,215);
+$scrollbarThumbHoverColor: rgb(180,180,180);
+
+.home-players-main-container{
+    width: 100%;
+}
+.home-players-title{
+    font-size: 30px;
+    font-weight: bolder;
+    color: $titleColor;
+    margin-bottom: 10px;
+    padding-left: 25px;
+}
+.home-players-search-container{
+    display: flex;
+}
+.home-players-input-search{
+    width: 300px;
+    height: 35px;
+    border-radius: 15px 0px 0px 15px;
+    border: 2px solid $inputBorderColor;
+    border-right: none;
+    font-size: 12px;
+    padding-left: 10px;
+    margin: 15px 0px 10px 25px;
+    color: $secondaryTextColor;
+}
+.home-players-input-search:focus{
+    outline: none;
+}
+.home-players-icon-search{
+    width: 40px;
+    height: 35px;
+    border-radius: 0px 15px 15px 0px;
+    border: 2px solid $inputBorderColor;
+    border-left: none;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-top: 4px;
+    margin: 15px 0px 10px 0px;
+    color: $secondaryTextColor;
+}
+.home-players-container{
+    justify-content: center;
+    max-height: 500px;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(230px, 1fr));
+}
+.home-players-container::-webkit-scrollbar {
+    width: 8px;
+}
+  
+  /* Track */
+.home-players-container::-webkit-scrollbar-track {
+    background-color: $scrollbarTrackColor; 
+    border-radius: 4px;
+}
+   
+  /* Handle */
+.home-players-container::-webkit-scrollbar-thumb {
+    background: $scrollbarThumbColor; 
+    border-radius: 4px;
+}
+  
+  /* Handle on hover */
+.home-players-container::-webkit-scrollbar-thumb:hover {
+    background: $scrollbarThumbHoverColor; 
+}

@@ -1,0 +1,18 @@
+.map-location-container{
+    width: 100%;
+    max-width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+    padding: 10px;
+}
+.map-marker{
+    width: 25px;
+    height: 40px;
+    background: url('../../Images/MapLocation/map-marker.webp');
+    background-size: 100% 100%;
+}
+.map-marker span{
+    position: relative;
+    left: 30px;
+    font-weight: bold;
+}

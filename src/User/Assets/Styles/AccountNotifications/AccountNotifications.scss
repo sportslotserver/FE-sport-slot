@@ -1,0 +1,35 @@
+$buttonColor: rgb(55,180,74);
+
+.account-notifications-container{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+}
+.account-notification-card-container{
+    width: 400px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+}
+.account-notification-card-left-container{
+    width: 50%;
+}
+.account-notification-card-right-container{
+    display: flex;
+    justify-content: end;
+    width: 50%;
+}
+.notification-save-button{
+    width: 200px;
+    height: 40px;
+    background-color: $buttonColor;
+    border-radius: 10px;
+    border: 2px solid $buttonColor;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    min-width: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

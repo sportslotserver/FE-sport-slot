@@ -1,0 +1,71 @@
+$whiteTextColor: white;
+$greenBackgroundColor: rgb(55,180,74);
+$greenTextColor: rgb(55,180,74);
+$whiteBackgroundColor: white;
+$greyTextColor: gray;
+$greyBorder:rgb(215,215,215);
+
+
+.booking-slot-pay-now-container{
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    width: 100%;
+    margin: 10px;
+}
+.booking-slot-pay-now-heading-1{
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.booking-slot-pay-now-text{
+    font-size: 15px;
+    margin-top: 5px;
+}
+.green-text{
+    color: $greenTextColor;
+}
+.white-text{
+    color: $whiteTextColor;
+}
+.grey-text{
+    color: $greyTextColor;
+}
+.green-background{
+    background-color: $greenBackgroundColor;
+}
+.white-background{
+    background-color: $whiteBackgroundColor;
+}
+.gery-background{
+    background-color: $greyTextColor;
+}
+.green-border{
+    border: 1px solid $greenBackgroundColor;
+}
+.white-border{
+    border: 1px solid white;
+}
+.grey-border{
+    border: 1px solid $greyBorder;
+}
+.booking-slot-pay-now-divider{
+    width: 90%;
+    margin: 25px auto;
+}
+.booking-slot-pay-now-heading-2{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.bold{
+    font-weight: bold;
+}
+.booking-slot-pay-now-button{
+    height: 35px;
+    border-radius: 17px;
+    font-size: 15px;
+    width: 120px;
+    font-weight: bolder;
+}

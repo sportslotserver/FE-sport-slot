@@ -1,0 +1,14 @@
+.find-slot-main-container{
+    display: flex;
+}
+.find-slot-container{
+    width: 100%;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.find-slot-container h1{
+    padding: 0px;
+}

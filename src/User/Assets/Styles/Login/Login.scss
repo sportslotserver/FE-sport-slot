@@ -1,0 +1,39 @@
+$inputBorderColor: #D2D2D1;
+$inputTextColor: #A7A6A6;
+
+.login-main-container{
+    display: flex;
+    margin-bottom: 20%;
+    flex-direction: column;
+    width: 100%;
+}
+.login-container{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+.login-title{
+    height: 100px;
+    padding: 35px 0px;
+    margin-bottom: 10px;
+}
+.login-input{
+    width: 100%;
+    max-width: 400px;
+    margin-top: 10px;
+}
+.login-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $inputTextColor;
+    opacity: 1; /* Firefox */
+  }
+  
+.login-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $inputTextColor;
+  }
+  
+.login-input::-ms-input-placeholder { /* Microsoft Edge */
+    color: $inputTextColor;
+  }
+.green-button{
+    margin-top: 30px;
+}

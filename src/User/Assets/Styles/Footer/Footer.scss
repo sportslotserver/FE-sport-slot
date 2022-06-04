@@ -1,0 +1,107 @@
+$navbarColor: black;
+$navbarTextColor: white;
+$inputBorderColor: rgb(215,215,215);
+$buttonColor: rgb(55,180,74);
+
+.footer-main-container{
+    width: 100%;
+    background-color: $navbarColor;
+}
+.footer-top-container{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    max-width: 960px;
+    flex-direction: row;
+    margin: 0px auto;
+    padding-bottom: 20px;
+}
+.footer-top-left-container{
+    display: grid;
+    padding-top: 50px;
+    align-items: flex-start;
+    grid-template-columns: repeat(auto-fill,minmax(140px, 1fr));
+    flex-wrap: wrap;
+    min-width: 300px;
+    margin: 0 auto;
+}
+.footer-top-left-link{
+    width: 130px;
+    margin: 0;
+    padding-left: 20px;
+    color: $navbarTextColor;
+    font-size: 12px;
+}
+.footer-top-right-container{
+    margin: 0 auto;
+}
+.footer-top-right span{
+    width: 325px;
+    color: white;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+.footer-top-right{
+    display: flex;
+    justify-content: flex-end;
+}
+.footer-top-right button{
+    width: 100px;
+    height: 35px;
+    background-color: $buttonColor;
+    border-radius: 15px;
+    border: 1px solid $buttonColor;
+    font-size: 14px;
+    color: white;
+    margin-left: 5px;
+    width: 120px;
+    font-weight: bolder;
+}
+.footer-top-right button:hover{
+    background-color: white;
+    color: $buttonColor;
+}
+.footer-top-right input{
+    width: 200px;
+    height: 35px;
+    border-radius: 15px;
+    border: 1px solid $inputBorderColor;
+    font-size: 12px;
+    padding-left: 10px;
+    background-color: black;
+    color: white;
+}
+.footer-down-container{
+    border-top: 1px solid white;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    max-width: 1040px;
+    flex-direction: row;
+    margin: 0px auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.footer-logo-img{
+    height: 30px;
+}
+.footer-down-container span{
+    color: white;
+    margin-left: 20px;
+    font-size: 12px;
+}
+.footer-down-left-container{
+    display: flex;
+    height: 60px;
+    align-items: center;
+    margin: 0 auto;
+}
+.footer-down-right-container{
+    margin: 0 auto;
+}
+.social-icons{
+    border-radius: 50%;
+    margin: 5px;
+    
+} 

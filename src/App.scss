@@ -1,0 +1,250 @@
+$headingColor: #EF6723;
+//$inputBorderColor: rgb(210,210,209);
+$buttonColor: rgb(55,180,74);
+$primaryTextColor: black;
+$secondaryTextColor: #A7A6A6;
+$whiteTextColor: white;
+$greenBackgroundColor: rgb(55,180,74);
+$greenTextColor: rgb(55,180,74);
+$whiteBackgroundColor: white;
+$greyTextColor: gray;
+$blueTextColor: rgb(35,167,223);
+$greyBorder:rgb(215,215,215);
+$modalInputTextColor: rgb(230,230,230);
+
+$headingColor: #EF6723;
+$font: 'Libre Franklin';
+$inputBorderColor: #D2D2D1;
+body, html{
+  min-height: 100%;
+}
+
+#root{
+  background-color: rgb(250,251,251);
+  height: 100%;
+}
+
+div, p, span{
+  font-family: 'Libre Franklin';
+}
+
+.heading-1{
+  font-family: $font;
+  color: $headingColor;
+  font-size: 36px;
+  font-weight: bold;
+}
+h1{
+  color: $headingColor;
+  font-family: 'Libre Franklin' !important;
+  font-size: 36px !important;
+  font-weight: bold !important;
+  padding: 25px 0px !important;
+}
+h3{
+  font-family: 'Libre Franklin' !important;
+  font-size: 20px !important;
+  font-weight: 100;
+  color: #4b4b4b;
+}
+h4{
+  font-family: 'Libre Franklin' !important;
+  font-size: 16px !important;
+  color: #4b4b4b;
+}
+h5{
+  font-family: 'Libre Franklin' !important;
+  font-size: 12px !important;
+  color: #4b4b4b;
+}
+input, select{
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background-size: 22px;
+  font-weight: 300;
+  list-style-type: none;
+  border-width: 1px;
+  border-color: $inputBorderColor;
+  border-style: solid;
+  border-radius: 15px;
+  color: $secondaryTextColor;
+}
+.heading-text{
+  color: $headingColor;
+  font-size: 36px;
+  font-weight: bold;
+}
+.heading-2{
+  color: $headingColor;
+  font-size: 20px;
+}
+.heading-3{
+  font-size: 16px;
+}
+.heading-4{
+  font-size: 12px;
+}
+.heading-5{
+  font-size: 16px;
+}
+.primary-text{
+
+}
+.secondary-text-color{
+  color: $secondaryTextColor;
+}
+.green-text{
+  color: $greenTextColor;
+}
+.white-text{
+  color: $whiteTextColor;
+}
+.orange-text{
+  color: $headingColor;
+}
+.grey-text{
+  color: $greyTextColor;
+}
+.blue-text{
+  color: $blueTextColor;
+}
+.black-text{
+  color: black;
+}
+.text-align-center{
+  text-align: center;
+}
+.green-background{
+  background-color: $greenBackgroundColor;
+}
+.white-background{
+  background-color: $whiteBackgroundColor;
+}
+.gery-background{
+  background-color: $greyTextColor;
+}
+.green-border{
+  border: 1px solid $greenBackgroundColor;
+}
+.white-border{
+  border: 1px solid white;
+}
+.grey-border{
+  border: 1px solid $greyBorder;
+}
+.text-bold{
+  font-weight: bold;
+}
+.padding-10px{
+  padding: 10px;
+}
+.margin-left-30px{
+  margin-left: 30px;
+}
+.green-button{
+
+}
+.green-button{
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 30px;
+  background-color: $buttonColor;
+  border-radius: 15px;
+  border: 2px solid $buttonColor;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  min-width: 100px;
+}
+.green-button:hover{
+  background-color: white;
+  color: $buttonColor;
+}
+.white-button{
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 15px;
+  border: 2px solid $buttonColor;
+  font-size: 16px;
+  color: $buttonColor;
+  font-weight: bold;
+  min-width: 100px;
+}
+.white-button:hover{
+  background-color: $buttonColor;
+  color: white;
+}
+.grey-button{
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 30px;
+  background-color: grey;
+  border-radius: 15px;
+  border: 2px solid grey;
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+  min-width: 100px;
+  margin-left: 20px;
+}
+.orange-button{
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 30px;
+  background-color: $headingColor;
+  border-radius: 15px;
+  border: 2px solid $headingColor;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  min-width: 100px;
+}
+.grey-button:hover{
+  background-color: $buttonColor;
+  color: white;
+}
+.pagination-container{
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  background-color: white;
+}
+.next-button-container{
+  display: flex;
+  justify-content: end;
+}
+.modal-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+.modal-header-1{
+  text-align: right;
+  border: none;
+  padding-right: 5px;
+}
+.modal-header-1 span{
+  cursor: pointer;
+  color: $secondaryTextColor;
+}
+.modal-heading{
+  font-size: 24px;
+}
+.modal-input{
+  width: 90%;
+  max-width: 300px;
+  text-align: center;
+  border: 1px solid $inputBorderColor;
+  border-radius: 5px;
+  font-size: 14px;
+  color:$secondaryTextColor;
+  padding: 5px;
+  outline: none;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}

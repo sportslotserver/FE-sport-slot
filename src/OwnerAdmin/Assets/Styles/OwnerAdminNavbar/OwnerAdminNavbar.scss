@@ -1,0 +1,74 @@
+/*variables*/
+$navbarColor: black;
+$navbarHeight: 90px;
+$navbarTextColor: white;
+$greyBorder:rgb(215,215,215);
+
+
+.owner-admin-navbar-logo-img{
+    margin-top: 0px;
+    height: 50px;
+}
+.owner-admin-navbar-link{
+    text-decoration: none;
+}
+
+/*navbar lg*/
+.owner-admin-navbar-container-lg{
+    display: flex;
+    height: $navbarHeight;
+    background-color: $navbarColor;
+}
+.owner-admin-navbar-lg{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    flex-direction: row;
+    height: $navbarHeight;
+    margin: 0 auto;
+    align-items: center;
+}
+.owner-admin-navbar-logo-lg{
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    height: $navbarHeight;
+}
+
+/*navbar -xs-sm-md*/
+.owner-admin-navbar-container-xs-sm-md{
+    display: flex;
+    height: $navbarHeight;
+    background-color: $navbarColor;
+}
+.owner-admin-navbar-xs-sm-md{
+    display: flex;
+    justify-content: space-between;
+    max-width: 960px;
+    flex-direction: row;
+    height: $navbarHeight;
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
+}
+.owner-admin-navbar-logo-xs-sm-md{
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    height: $navbarHeight;
+}
+
+/***************/
+.owner-admin-navbar-menu{
+    width: 250px;
+    background-color: white;
+    position: fixed;
+    right: 50px;
+    border-radius: 3px;
+    border: 1px solid $greyBorder;
+    z-index: 10000;
+}
+.owner-admin-navbar-menu h4{
+    margin: 20px 15px;
+}

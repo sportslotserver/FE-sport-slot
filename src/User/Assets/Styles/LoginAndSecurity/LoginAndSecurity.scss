@@ -1,0 +1,48 @@
+$buttonColor: rgb(55,180,74);
+
+.login-and-security-password-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 430px;
+}
+.login-and-security-input-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 30px;
+    align-items: center;
+    margin-top: 20px;
+}
+.login-and-security-password-container input{
+    margin-top: 10px;
+}
+.save-password-button{
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: 200px;
+    height: 40px;
+    background-color: $buttonColor;
+    border-radius: 10px;
+    border: 2px solid $buttonColor;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    min-width: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.phone-autentification-container{
+    display: flex;
+    flex-direction: row;
+    max-width: 430px;
+    align-items: center;
+}
+.phone-autentification-container h5{
+    margin-top: 20px;
+}
+.phone-autentification-switch{
+    height: 50px;
+    width: 50px;
+    background-color: red;
+}

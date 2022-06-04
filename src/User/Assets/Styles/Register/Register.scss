@@ -1,0 +1,57 @@
+$inputBorderColor: #D2D2D1;
+$inputTextColor: #A7A6A6;
+$radioColor: #37B34A;
+
+.register-main-container{
+    display: flex;
+    margin-bottom: 20%;
+    flex-direction: column;
+    width: 100%;
+}
+.register-container{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+.register-title{
+    height: 100px;
+    padding: 35px 0px;
+    margin-bottom: 10px;
+}
+.div-register-input{
+    width: 100%;
+    max-width: 400px;
+    height: 50px;
+    padding-left: 35px;
+}
+.register-input{
+    width: 100%;
+    max-width: 400px;
+    margin-top: 10px;
+}
+.register-input::placeholder {
+    color: $inputTextColor;
+    opacity: 1;
+}
+.register-input:-ms-input-placeholder {
+    color: $inputTextColor;
+}
+  
+.register-input::-ms-input-placeholder {
+    color: $inputTextColor;
+}
+.register-radio-input{
+    width: 15px;
+    height: 15px;
+    margin-top: 10px;
+    margin-right: 10px;
+    accent-color: $radioColor;
+}
+.register-radio-label-1{
+    font-size: 16px;
+}
+.register-radio-label-2{
+    font-size: 16px;
+    color:$radioColor;
+    font-weight: bold;
+}
