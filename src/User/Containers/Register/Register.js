@@ -30,7 +30,7 @@ function Register(){
      * If some error occurs while user try to registrate to platform, we'll send him to info page (platform is under maintaining)
      * To choose city from drop down, first need's country to be selected 
      */
-    const registration = () => {
+    const signIn = () => {
         Api.user(PlayerActions.PLAYER_REGISTRATION, {
             full_name: fullname,
             birthday: dateOfBirth,
@@ -93,7 +93,7 @@ function Register(){
                     <span className="register-radio-label-1">I have read and agreed to </span>
                     <span className="register-radio-label-2">Terms and conditions!</span>
                 </div>
-                <button className="green-button" onClick={() => registration()}>
+                <button className="green-button" onClick={() => signIn()}>
                     Register
                 </button>
             </div>

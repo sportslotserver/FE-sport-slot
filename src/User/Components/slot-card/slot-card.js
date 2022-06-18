@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import '../../Assets/Styles/SlotCard/SlotCard.scss'
 import SlotImage from '../../Assets/Images/SlotCard/Court_image_2.png'
+import { Link } from 'react-router-dom'
 
 const SlotCard = ({ 
     slot: { 
@@ -20,6 +21,12 @@ const SlotCard = ({
     } 
     }) => {
     
+    const [ playerID, setPlayerID ] = useState(null)
+    useEffect(() => {
+        const player = JSON.parse(sessionStorage.getItem('player'))
+        setPlayerID(player.id)
+    }, [])
+    
     return(
         <div className="slot-card-container">
             <img src={ SlotImage } className="slot-card-image"/>
@@ -28,18 +35,17 @@ const SlotCard = ({
             <div className="slot-card-text">{ slot_date } / { slot_start_time } - { slot_end_time }</div>
             { slot_has_reservation ?  
                 <>
-                    <div className="slot-card-title">10 players needed</div>
+                    <div className="slot-card-title">{ reservation.players_accepted } / { reservation.players_needed } players</div>
                     <div className="slot-card-footer">
-                        <div className="slot-card-footer-left"><div className="slot-card-footer-price">$5.5</div><div className="slot-card-footer-per">per person</div></div>
-                        <button className="slot-card-footer-button">Join group</button>
+                        <div className="slot-card-footer-left"><div className="slot-card-footer-price">${ reservation.price_per_person }</div><div className="slot-card-footer-per">per person</div></div>
+                        <Link to={`/booking/${court_id}/${id}/${playerID}`}>Join group</Link>
                     </div>
                 </>
             : 
                 <>
                     <div className="slot-card-title">${ slot_price }</div>
-                    <div className="slot-card-footer">
-                        <button>Direct Book</button>
-                        <button>Create Group</button>
+                    <div className="slot-card-footer-button">
+                        <Link to={`/booking/${court_id}/${id}/${playerID}`}>Book</Link>
                     </div>
                 </> 
             }

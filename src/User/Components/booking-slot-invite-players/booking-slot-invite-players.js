@@ -16,13 +16,13 @@ function BookingSlotInvitePlayers(){
     for(var i=0;i<46;i++)
         players.push("Player "+i)
 
-    useEffect(()=>{
-        var items = []
-        for(var i=(activePage*itemsCountPerPage)-itemsCountPerPage;i<(activePage*itemsCountPerPage);i++)
-            if(players[i])
-                items.push(players[i])
-        setDisplayeditems(items)
-    },[activePage,itemsCountPerPage])
+    // useEffect(()=>{
+    //     var items = []
+    //     for(var i=(activePage*itemsCountPerPage)-itemsCountPerPage;i<(activePage*itemsCountPerPage);i++)
+    //         if(players[i])
+    //             items.push(players[i])
+    //     setDisplayeditems(items)
+    // },[activePage,itemsCountPerPage])
 
     return(
         <>

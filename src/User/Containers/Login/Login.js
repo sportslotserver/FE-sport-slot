@@ -3,17 +3,17 @@ import '../../Assets/Styles/Login/Login.scss'
 import Api from '../../../api/'
 import { PlayerActions } from '../../../api/actions'
 
-function Login(){
+const Login = ({ setPlayerData, setLoggingStatus }) => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
     const handleLogin = () => {
-        console.log('desava li se nesto ')
         Api.user(PlayerActions.PLAYER_LOGIN, {
             email: username,
 	        password: password
-        }).then(resp => { //TODO: Data after login needs to be store in redux store how we can have the player data through whole platform, and also store token in localStrorage or somewhere
-            console.log('Player is logged in')
+        }).then(resp => {
+            setPlayerData(resp.data)
+            setLoggingStatus(true)
         }).catch(err => {
             console.log('Error while trying to login')
         })

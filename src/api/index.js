@@ -1,6 +1,6 @@
 import { PlayerActions, SlotActions } from './actions'
 import { playerRegistration, playerLogin } from './endpoints/user'
-import { filteringSlots } from './endpoints/slots'
+import { filteringSlots, getCourtSlotInfo } from './endpoints/slots'
 
 class Api {
     constructor () {  }
@@ -22,6 +22,8 @@ class Api {
         switch (action) {
             case SlotActions.FILTERING_SLOTS:
                 return await filteringSlots(data)
+            case SlotActions.GET_COURT_SLOT_INFO:
+                return await getCourtSlotInfo(data)
             default:
                 throw new Error('Action doesnt exist')
         }

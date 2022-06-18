@@ -13,7 +13,7 @@ import Api from '../../../api/'
 import { SlotActions } from '../../../api/actions'
 
 
-function Home(){
+const Home = () => {
     const [showInvitePlayerModal, setShowInvitePlayerModal] = useState(false)
     const [params, setParams] = useState({})
     const [slots, setSlots] = useState([])
@@ -36,7 +36,6 @@ function Home(){
     
     return(
         <>
-        <HomeSlider/>
         <div className="home-main-container">
             <div className="home-container">
                 <HomeSearch setParams={setParams} params={params} search={search} />
@@ -47,6 +46,8 @@ function Home(){
                 {/* <HomePlayers handleInvitePlayer={handleInvitePlayer}/> */}
             </div>
         </div>
+        <HomeSlider/>
+        
         <Modal show={showInvitePlayerModal} onHide={()=>{setShowInvitePlayerModal(false)}}>
         <div className="modal-header-1"><span onClick={handleSentInvite}>X</span></div>
             <div className="modal-container">

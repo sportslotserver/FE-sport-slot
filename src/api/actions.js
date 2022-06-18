@@ -4,6 +4,7 @@ export const PlayerActions = Object.freeze({
 })
 
 export const SlotActions = Object.freeze({
-    FILTERING_SLOTS: "FILTERING_SLOTS"
+    FILTERING_SLOTS: "FILTERING_SLOTS",
+    GET_COURT_SLOT_INFO: "GET_COURT_SLOT_INFO"
 })
 

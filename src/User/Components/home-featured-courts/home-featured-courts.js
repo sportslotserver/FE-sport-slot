@@ -14,13 +14,13 @@ function HomeFeaturedCourts(){
     for(var i=0;i<46;i++)
         slots.push("Item "+i)
 
-    useEffect(()=>{
-        var items = []
-        for(var i=(activePage*itemsCountPerPage)-itemsCountPerPage;i<(activePage*itemsCountPerPage);i++)
-            if(slots[i])
-                items.push(slots[i])
-        setDisplayeditems(items)
-    },[activePage,itemsCountPerPage])
+    // useEffect(()=>{
+    //     var items = []
+    //     for(var i=(activePage*itemsCountPerPage)-itemsCountPerPage;i<(activePage*itemsCountPerPage);i++)
+    //         if(slots[i])
+    //             items.push(slots[i])
+    //     setDisplayeditems(items)
+    // },[activePage,itemsCountPerPage])
 
     /*const handleResize =()=>{
         var slotsContainer = document.getElementById('slots-container')
