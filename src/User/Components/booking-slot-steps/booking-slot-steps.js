@@ -12,17 +12,89 @@ import ConfirmationSlotCreated from '../confirmation-slot-created/confirmation-s
 import ConfirmationRequestSent from '../confirmation-requst-sent/confirmation-requst-sent';
 import AreYouSure from '../booking-slot-are-you-sure/booking-slot-are-you-sure';
 
-const BookingSlotSteps = ({ data }) => {
+import Api from '../../../api/'
+import { SlotActions } from '../../../api/actions';
+
+const BookingSlotSteps = ({ data, type, player_id }) => {
+
+    //direktno bukiranje
+    const handleDirectBook = () => {
+        Api.slot(SlotActions.DIRECT_BOOK, {
+            slot_id: slot.id,
+            player_id: player_id,
+            sport: slot.slot_available_sports[0],
+            reservation_type: "direct",
+            has_reservation: true
+        }).then(response => {
+            console.log(response)
+            setStep(2)
+        }).catch(err => {
+            throw new Error(err)
+        })
+    }
+
+    //kreiranje grupe koja ce bukirati slot
+    const [playersNeeded, setPlayersNeeded] = useState(0)
+    const [invitedPlayers, setInvitedPlayers] = useState([])
+
+    const handleInvitePlayer = (newPlayer) => {
+        setInvitedPlayers(invitedPlayers => [...invitedPlayers, newPlayer])
+    }
+
+    const handleCreateGroup = () => {
+        Api.slot(SlotActions.CREATE_GROUP, {
+            slot_id: slot.id,
+            player_id: player_id,
+            sport: slot.slot_available_sports[0],
+            reservation_type: "group",
+            players_needed: playersNeeded,
+            players: invitedPlayers
+        }).then(response => {
+            console.log(response)
+            setStep(4)
+        }).catch(err => {
+            throw new Error(err)
+        })
+    }
+        
 
     const { slot } = data
-    // const [ booking, setBookingData ] = useState({})
+    const [ booking, setBookingData ] = useState({})
 
+    const [step, setStep] = useState(0)
+
+    const [steps, setSteps] = useState([])
+
+    const directBook = [<BookingSlotBuyNow setStep={()=>{setStep(1)}}/>,<BookingSlotConfirmation type={"pay-now"} handleDone={handleDirectBook}/>,<ConfirmationSlotCreated/>]
+    const createGroup = [<BookingSlotShareTheCost setStep={()=>{setStep(1)}}/>,<BookingSlotPlayersNeeded setStep={()=>{setStep(2)}} setPlayersNeeded={setPlayersNeeded}/>,<BookingSlotInvitePlayers setStep={()=>{setStep(3)}} handleInvitePlayer={handleInvitePlayer}/>,<BookingSlotConfirmation type={"share-the-cost"} handleDone={()=>{handleCreateGroup()}}/>,<ConfirmationSlotCreated/>]
+    const joinGroup = [<BookingSlotJoinTheGroup data={data} setStep={()=>{setStep()}}/>,<BookingSlotConfirmation type={"join-group"}/>,]
+
+    useEffect(()=>{
+        if(steps.length === 0)
+            switch(type) {
+                case "direct":
+                    setSteps(directBook)
+                    break;
+                case "group":
+                    setSteps(createGroup)
+                    break;
+                case "join":
+                    setSteps(joinGroup)
+                    break;
+                default:
+                    setSteps([])
+            }
+    },[steps,setStep])
     
 
 
     return(
         <>
-            { slot?.slot_has_reservation ? 
+        {
+            steps && steps[step]
+        }
+        
+            {/* slot?.slot_has_reservation ? 
                 <div className="booking-slot-steps-container-1">
                     <BookingSlotJoinTheGroup data={data} />
                     <BookingSlotBuyNow slotType={""} />
@@ -32,7 +104,7 @@ const BookingSlotSteps = ({ data }) => {
                     <BookingSlotBuyNow slotType={"available"}/>
                     <BookingSlotShareTheCost/>
                 </div>
-            }
+    */}
         
             {/* <AreYouSure/>
             <ConfirmationSlotCreated/>

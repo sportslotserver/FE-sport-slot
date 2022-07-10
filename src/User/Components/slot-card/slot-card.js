@@ -38,14 +38,20 @@ const SlotCard = ({
                     <div className="slot-card-title">{ reservation.players_accepted } / { reservation.players_needed } players</div>
                     <div className="slot-card-footer">
                         <div className="slot-card-footer-left"><div className="slot-card-footer-price">${ reservation.price_per_person }</div><div className="slot-card-footer-per">per person</div></div>
-                        <Link to={`/booking/${court_id}/${id}/${playerID}`}>Join group</Link>
+                        <div className="slot-card-footer-buttons">
+                            <Link className="green-button" to={`/booking/${court_id}/${id}/${playerID}/join`}>Join group</Link>
+                            <Link className="green-button" to={`/booking/${court_id}/${id}/${playerID}/direct`}>Book slot</Link>
+                        </div>
                     </div>
                 </>
             : 
                 <>
-                    <div className="slot-card-title">${ slot_price }</div>
-                    <div className="slot-card-footer-button">
-                        <Link to={`/booking/${court_id}/${id}/${playerID}`}>Book</Link>
+                    <div className="slot-card-footer">
+                        <div className="slot-card-footer-left"><div className="slot-card-footer-price">${ slot_price }</div><div className="slot-card-footer-per">per hour</div></div>
+                        <div className="slot-card-footer-buttons">
+                            <Link className="slot-card-button" to={`/booking/${court_id}/${id}/${playerID}/group`}>Create group</Link>
+                            <Link className="slot-card-button" to={`/booking/${court_id}/${id}/${playerID}/direct`}>Book slot</Link>
+                        </div>
                     </div>
                 </> 
             }

@@ -16,10 +16,11 @@ import { SlotActions } from '../../../api/actions'
 function BookingSlot(){
     var images = [img1,img2,img3,img4]
 
-    const { court_id, id, player_id } = useParams()
+    const { court_id, id, player_id, type } = useParams()
     const [ slotData, setSlotData ] = useState(null)
 
     useEffect(() => {
+        console.log(type)
         Api.slot(SlotActions.GET_COURT_SLOT_INFO, { court_id, id }).then(response => {
             setSlotData(response.data)
         }).catch(err => {
@@ -33,7 +34,7 @@ function BookingSlot(){
         <div className="booking-main-container">
             <div className="booking-container">
                 { slotData ? <SlotInfo slotData={slotData} /> : null }
-                { slotData ? <BookingSlotSteps data={slotData} /> : null }
+                { slotData ? <BookingSlotSteps data={slotData} player_id={player_id} type={type}/> : null }
                 {/* <CancellationPolicy/> */}
             </div>
         </div>

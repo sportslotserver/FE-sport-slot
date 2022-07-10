@@ -3,7 +3,7 @@ import Icon from '../../Assets/Images/SlotTypes/icon_2.png'
 
 const BookingSlotJoinTheGroup = ({ data }) => {
 
-    const { slot, reservation } = data
+    const { slot, reservation, setStep } = data
 
     return(
         <div className="booking-slot-join-the-group-container">
@@ -12,7 +12,7 @@ const BookingSlotJoinTheGroup = ({ data }) => {
             <div className="booking-slot-join-the-group-text bold-2">Paymeent wiil be made once all players accept the invitation.</div>
             <hr className="booking-slot-join-the-group-divider"/>
             <div className="booking-slot-join-the-group-heading-2"><img src={Icon} alt=""/>${ reservation?.price_per_person } per player</div>
-            <button className="booking-slot-join-the-group-button">Join Group</button>
+            <button className="booking-slot-join-the-group-button" onClick={setStep}>Join Group</button>
             <hr className="booking-slot-join-the-group-divider"/>
             <div className="booking-slot-join-the-group-text">You will not be charged yet. The payment will be processed when all players accept the invitation.</div>
             <div className="booking-slot-join-the-group-text">If you invited more players than needed, additional players who accept the invite after a requested is reached will be charged.</div>

@@ -15,7 +15,7 @@ const Login = ({ setPlayerData, setLoggingStatus }) => {
             setPlayerData(resp.data)
             setLoggingStatus(true)
         }).catch(err => {
-            console.log('Error while trying to login')
+            console.log('Error while trying to login' + err)
         })
     }
 

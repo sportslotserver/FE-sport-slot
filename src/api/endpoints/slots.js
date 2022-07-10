@@ -17,3 +17,19 @@ export const getCourtSlotInfo = async (data) => {
         throw new Error('Error rised while geting slot info...')
     }
 }
+
+export const createGroup = async (data) => {
+    try {
+        return await axios.post(`${Config.baseURL}${Routes.CREATE_GROUP}`, data)
+    } catch (error) {
+        throw new Error('Error rised while create group...')
+    }
+}
+
+export const directBook = async (data) => {
+    try {
+        return await axios.post(`${Config.baseURL}${Routes.DIRECT_BOOK}`, data)
+    } catch (error) {
+        throw new Error('Error rised while direct booking...')
+    }
+}

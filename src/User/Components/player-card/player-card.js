@@ -13,7 +13,7 @@ function PlayerCard(props){
             <div style={{width: "100%"}}>
             <div className={direction === "vertical" ? "player-card-child-vertical" : "player-card-child-horizontal"}>
                 <div>
-                    <div className={direction === "vertical" ? "heading-3 text-bold text-align-center" : "heading-2 black-text"}>{player}</div>
+                    <div className={direction === "vertical" ? "heading-3 text-bold text-align-center" : "heading-2 black-text"}>{player.full_name}</div>
                     {
                         direction === "vertical" ?
                         <>
@@ -32,7 +32,7 @@ function PlayerCard(props){
                         <ThreeDotsVertical/>
                     </div>
                     :
-                    <button className={direction === "vertical" ? "player-card-button margin-top-20":"player-card-button"} onClick={handleInvitePlayer}>Invite to slot</button>
+                    <button className={direction === "vertical" ? "player-card-button margin-top-20":"player-card-button"} onClick={()=>{handleInvitePlayer(player.id)}}>Invite to slot</button>
                 }
             </div>
             </div>

@@ -36,6 +36,7 @@ const Home = () => {
     
     return(
         <>
+        <HomeSlider/>
         <div className="home-main-container">
             <div className="home-container">
                 <HomeSearch setParams={setParams} params={params} search={search} />
@@ -46,7 +47,7 @@ const Home = () => {
                 {/* <HomePlayers handleInvitePlayer={handleInvitePlayer}/> */}
             </div>
         </div>
-        <HomeSlider/>
+        
         
         <Modal show={showInvitePlayerModal} onHide={()=>{setShowInvitePlayerModal(false)}}>
         <div className="modal-header-1"><span onClick={handleSentInvite}>X</span></div>

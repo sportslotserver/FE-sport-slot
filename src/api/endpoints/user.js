@@ -17,3 +17,11 @@ export const playerLogin = async (data) => {
         throw new Error('Error rised in player login')
     }
 }
+
+export const getAllPlayers = async () => {
+    try {
+        return await axios.get(`${Config.baseURL}${Routes.GET_ALL_PLAYERS}`)
+    } catch (error) {
+        throw new Error('Error rised in get all players... ')
+    }
+}

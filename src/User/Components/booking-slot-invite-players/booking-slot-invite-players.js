@@ -4,25 +4,44 @@ import PlayerCard from '../player-card/player-card';
 import CustomPagination from '../pagination/pagination';
 import { Search } from "react-bootstrap-icons";
 
-function BookingSlotInvitePlayers(){
+import Api from '../../../api/'
+import { PlayerActions } from '../../../api/actions';
+
+function BookingSlotInvitePlayers(props){
+
+    const {setStep, handleInvitePlayer} = props
 
     const [activePage, setActivePage]= useState(1)
     const pageRangeDisplayed = 3
     const [itemsCountPerPage,setItemsCountPerPage] = useState(5)
 
-    const [displayedItems, setDisplayeditems] = useState([])
-    
-    var players = []
-    for(var i=0;i<46;i++)
-        players.push("Player "+i)
+    const [players, setPlayers] = useState([])
 
-    // useEffect(()=>{
-    //     var items = []
-    //     for(var i=(activePage*itemsCountPerPage)-itemsCountPerPage;i<(activePage*itemsCountPerPage);i++)
-    //         if(players[i])
-    //             items.push(players[i])
-    //     setDisplayeditems(items)
-    // },[activePage,itemsCountPerPage])
+    const [displayedItems, setDisplayeditems] = useState([])
+
+    const getPlayers = () => {
+        Api.user(PlayerActions.GET_ALL_PLAYERS)
+            .then(response => {
+            console.log(response)
+            setPlayers(response.data)
+        }).catch(err => {
+            throw new Error(err)
+        })
+    }
+
+    useEffect(()=>{
+        if(players.length === 0)
+            getPlayers()
+    },[players])
+    
+
+    useEffect(()=>{
+        var items = []
+        for(var i=(activePage*itemsCountPerPage)-itemsCountPerPage;i<(activePage*itemsCountPerPage);i++)
+            if(players[i])
+                items.push(players[i])
+        setDisplayeditems(items)
+    },[activePage,itemsCountPerPage,players])
 
     return(
         <>
@@ -34,7 +53,7 @@ function BookingSlotInvitePlayers(){
         <div className="invite-players-container">
             {
                 displayedItems.map((player) => 
-                    <PlayerCard player={player} direction={"horizontal"} details={false}/>
+                    <PlayerCard key={player.id} player={player} direction={"horizontal"} details={false} handleInvitePlayer={handleInvitePlayer}/>
                 )
             }
         </div>
@@ -42,7 +61,7 @@ function BookingSlotInvitePlayers(){
             <CustomPagination totalItemsCount={players.length} pageRangeDisplayed={pageRangeDisplayed} itemsCountPerPage={itemsCountPerPage} activePage={activePage} setActivePage={setActivePage}/>
         </div>
         <div className="next-button-container">
-            <button className="green-button">Next</button>
+            <button className="green-button" onClick={setStep}>Next</button>
         </div>
         </>
     );

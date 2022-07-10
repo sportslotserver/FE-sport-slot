@@ -1,6 +1,6 @@
 import { PlayerActions, SlotActions } from './actions'
-import { playerRegistration, playerLogin } from './endpoints/user'
-import { filteringSlots, getCourtSlotInfo } from './endpoints/slots'
+import { playerRegistration, playerLogin, getAllPlayers } from './endpoints/user'
+import { filteringSlots, getCourtSlotInfo, createGroup, directBook } from './endpoints/slots'
 
 class Api {
     constructor () {  }
@@ -13,6 +13,8 @@ class Api {
                 return await playerLogin(data)
             case PlayerActions.FILTERING_SLOTS:
                 return await filteringSlots(data)
+            case PlayerActions.GET_ALL_PLAYERS:
+                return await getAllPlayers()
             default:
                 throw new Error('Action doesnt exist')
         }
@@ -24,6 +26,10 @@ class Api {
                 return await filteringSlots(data)
             case SlotActions.GET_COURT_SLOT_INFO:
                 return await getCourtSlotInfo(data)
+            case SlotActions.CREATE_GROUP:
+                return await createGroup(data)
+            case SlotActions.DIRECT_BOOK:
+                return await directBook(data)
             default:
                 throw new Error('Action doesnt exist')
         }

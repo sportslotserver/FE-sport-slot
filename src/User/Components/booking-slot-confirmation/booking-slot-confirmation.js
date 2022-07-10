@@ -1,7 +1,7 @@
 
 
 function BookingSlotConfirmation(props){
-    const {type} = props
+    const {type, handleDone} = props
 
     return(
         <>
@@ -41,7 +41,7 @@ function BookingSlotConfirmation(props){
                 </>
             }
             <br/>
-            <button className="green-button">Done</button>
+            <button className="green-button" onClick={handleDone}>Done</button>
         </div>
         </>
     );

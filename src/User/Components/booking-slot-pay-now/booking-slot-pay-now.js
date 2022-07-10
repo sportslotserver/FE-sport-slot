@@ -1,7 +1,7 @@
 import '../../Assets/Styles/BookingSlotPayNow/BookingSlotPayNow.scss'
 
 function BookingSlotPayNow(props){
-    const {slotType} = props
+    const {slotType, setStep} = props
 
     return(
         <div className={slotType === "available" ? "booking-slot-pay-now-container green-background green-border" : "booking-slot-pay-now-container white-background grey-border"}>
@@ -26,7 +26,7 @@ function BookingSlotPayNow(props){
             <div className={slotType === "available" ? "booking-slot-pay-now-text white-text":"booking-slot-pay-now-text grey-text"}>Total slot cost: $50</div>
             <div className={slotType === "available" ? "booking-slot-pay-now-text white-text":"booking-slot-pay-now-text grey-text"}>Service fee: $5</div>
             <div className={slotType === "available" ? "booking-slot-pay-now-heading-2 white-text":"booking-slot-pay-now-heading-2 green-text"}>Total amount: $55</div>
-            <button className={slotType === "available" ? "booking-slot-pay-now-button white-background green-text white-border":"booking-slot-pay-now-button green-background white-text green-border"}>Pay now</button>
+            <button onClick={setStep} className={slotType === "available" ? "booking-slot-pay-now-button white-background green-text white-border":"booking-slot-pay-now-button green-background white-text green-border"}>Pay now</button>
             <hr className={slotType === "available" ? "booking-slot-pay-now-divider white-background":""}/>
             {
                 slotType === "available" ?

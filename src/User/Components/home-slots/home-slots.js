@@ -9,6 +9,8 @@ const HomeSlots = ({ slots }) => {
     const [itemsCountPerPage,setItemsCountPerPage] = useState(8)
 
     const [displayedItems, setDisplayeditems] = useState([])
+
+    console.log(slots)
     
     // var slots = []
     // for(var i=0;i<46;i++)
