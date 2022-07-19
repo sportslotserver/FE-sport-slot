@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/FE-sport-slot/static/css/main.181cc340.css",
-    "main.js": "/FE-sport-slot/static/js/main.6876ce3f.js",
+    "main.css": "/FE-sport-slot/static/css/main.e8aafb3f.css",
+    "main.js": "/FE-sport-slot/static/js/main.228daed1.js",
     "static/media/SLIDE_3.png": "/FE-sport-slot/static/media/SLIDE_3.4568f30f2ae8e8c4ebfe.png",
     "static/media/SLIDE_2.png": "/FE-sport-slot/static/media/SLIDE_2.9bf41f01ce2dd1666f27.png",
     "static/media/SLIDE_1.png": "/FE-sport-slot/static/media/SLIDE_1.48ec729411289b978693.png",
@@ -52,11 +52,11 @@
     "static/media/libre-franklin-latin-100.woff2": "/FE-sport-slot/static/media/libre-franklin-latin-100.00cd103417f3ecc9a3c8.woff2",
     "static/media/image4.png": "/FE-sport-slot/static/media/image4.03a79e9348ee10c77cd1.png",
     "index.html": "/FE-sport-slot/index.html",
-    "main.181cc340.css.map": "/FE-sport-slot/static/css/main.181cc340.css.map",
-    "main.6876ce3f.js.map": "/FE-sport-slot/static/js/main.6876ce3f.js.map"
+    "main.e8aafb3f.css.map": "/FE-sport-slot/static/css/main.e8aafb3f.css.map",
+    "main.228daed1.js.map": "/FE-sport-slot/static/js/main.228daed1.js.map"
   },
   "entrypoints": [
-    "static/css/main.181cc340.css",
-    "static/js/main.6876ce3f.js"
+    "static/css/main.e8aafb3f.css",
+    "static/js/main.228daed1.js"
   ]
 }
