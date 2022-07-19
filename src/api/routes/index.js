@@ -8,5 +8,6 @@ export const Routes = Object.freeze({
     GET_SLOT_INFO: "/court-slot-info",
     CREATE_GROUP: "/reservation/group-reservation",
     DIRECT_BOOK: "/reservation/direct-reservation",
-    PLAYER_PAYMENT_METHODS: "/player/get-payment-methods"
+    PLAYER_PAYMENT_METHODS: "/player/get-payment-methods",
+    UPDATE_PLAYER_ACCOUNT: '/player/update-player'
 })

@@ -1,10 +1,19 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import '../../Assets/Styles/LoginAndSecurity/LoginAndSecurity.scss'
 import SwitchButton from '../switch-button/switch-button'
 
-function LoginAndSecurity(){
+function LoginAndSecurity({ player, update }){
 
-    const [showEdit,setShowEdit] = useState(true)
+    const [ showEdit, setShowEdit ] = useState(true)
+    const [ password, setPassword ] = useState("")
+    const inputRef = useRef(null)
+
+    const updatePassword = () => {
+        if (password != '') {
+            update({ [inputRef.current.name]: password})
+            showEdit(true)
+        }
+    }
 
     return(
         <>
@@ -20,8 +29,8 @@ function LoginAndSecurity(){
                     }
                 </div>
             </div>
-            <input type="text" placeholder={"Type new password"} disabled={showEdit ? true : false}/>
-            <button className="save-password-button">Save</button>
+            <input ref={inputRef} type="text" name="password" placeholder={"Type new password"} onChange={(e) => setPassword(e.target.value)} disabled={showEdit ? true : false}/>
+            <button className="save-password-button" disabled={showEdit} onClick={updatePassword}>Save</button>
         </div>
         <div style={{marginTop: 30}}>
             <h4><b>Security - phone autentification</b></h4>

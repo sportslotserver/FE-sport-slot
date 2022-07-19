@@ -1,5 +1,5 @@
 import { PlayerActions, SlotActions } from './actions'
-import { playerRegistration, playerLogin, getAllPlayers, getSlotPlayers, getPlayerInfo, getPlayerPaymentMethods } from './endpoints/user'
+import { playerRegistration, playerLogin, getAllPlayers, getSlotPlayers, getPlayerInfo, getPlayerPaymentMethods, updatePlayerAccoutn } from './endpoints/user'
 import { filteringSlots, getCourtSlotInfo, createGroup, directBook } from './endpoints/slots'
 
 class Api {
@@ -21,6 +21,8 @@ class Api {
                 return await getSlotPlayers(data)
             case PlayerActions.GET_PLAYER_PAYMENT_METHODS:
                 return await getPlayerPaymentMethods(data)
+            case PlayerActions.UPDATE_PLAYER_PROFILE:
+                return await updatePlayerAccoutn(data)
             default:
                 throw new Error('Action doesnt exist')
         }
