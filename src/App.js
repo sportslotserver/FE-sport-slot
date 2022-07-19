@@ -19,7 +19,6 @@ import OwnerAdminNavbar from './OwnerAdmin/Components/owner-admin-navbar/owner-a
 import OwnerAdminCourts from './OwnerAdmin/Containers/OwnerAdminCourts/OwnerAdminCourts';
 import ManageCourt from './OwnerAdmin/Containers/ManageCourt/ManageCourt';
 import { useState, useEffect } from 'react'
-import { PlayerContext } from './Contexts/PlayerContext'
 
 function App() {
 
@@ -28,14 +27,13 @@ function App() {
 
   useEffect(() => {
     if (isLoggedIn) {
-      console.log('jel se to ove desava')
       sessionStorage.setItem('player', JSON.stringify(playerData))
     }
   }, [isLoggedIn])
 
   return (
       <BrowserRouter path="/user">
-        <Navbar/>
+        <Navbar isLoggedIn={isLoggedIn} playerData={playerData} />
         {/* <OwnerAdminNavbar/> */}
         <Routes>
           <Route path="/" element={<Login setLoggingStatus={setLoggingStatus} setPlayerData={setPlayerData} />}/>
@@ -49,7 +47,7 @@ function App() {
           <Route path="/notifications" element={<Notifications/>}/>
           <Route path="/find" element={<FindSlot/>}/>
           <Route path="/location" element={<Location/>}/>
-          <Route path="/account" element={<Account/>}/>
+          <Route path="/account/:id" element={<Account/>}/>
           <Route path="/selected-profile" element={<PreviewProfile/>}/>
           <Route path="/owner-admin-courts" element={<OwnerAdminCourts/>}/>
           <Route path="/manage-slots" element={<ManageCourt/>}/>

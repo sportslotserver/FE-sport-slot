@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import '../../Assets/Styles/Navbar/Navbar.scss'
 import {Link } from "react-router-dom";
 import { List } from "react-bootstrap-icons";
 import HeaderLogo from '../../Assets/Images/Header/sport-slot-logo.png'
 import NavbarUserButton from '../navbar-user-button/navbar-user-button'
 
-function Navbar(){
+function Navbar({ isLoggedIn, playerData }){
     const [isLogin, setIsLogin] = useState(true)
 
     const OpenCloseMenu = () => {
@@ -15,6 +15,7 @@ function Navbar(){
         else
             menu.style.display = "block";
     }
+
     return(
         <>
         <div className="navbar-container-lg d-none d-sm-none d-md-none d-lg-block">
@@ -22,12 +23,12 @@ function Navbar(){
                 <div className="nav-logo-lg">
                     <img className="nav-logo-img" src={HeaderLogo}/>
                 </div>
-                {isLogin ?
+                {isLoggedIn ?
                 <div className="nav-options-lg">
                     <Link className="nav-option-lg" to="/">My games</Link>
                     <Link className="nav-option-lg" to="/">Courts</Link>
                     <Link className="nav-option-lg" to="/">Players</Link>
-                    <div className="nav-option-lg"><NavbarUserButton/></div>
+                    <div className="nav-option-lg"><NavbarUserButton playerData={playerData} /></div>
                 </div>
                 :
                 <div className="nav-options-lg">

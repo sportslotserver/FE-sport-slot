@@ -12,7 +12,7 @@ export const filteringSlots = async (data) => {
 
 export const getCourtSlotInfo = async (data) => {
     try {
-        return await axios.get(`${Config.baseURL}${Routes.GET_SLOT_INFO}/${data.court_id}/${data.id}`)
+        return await axios.get(`${Config.baseURL}${Routes.GET_SLOT_INFO}/${data.court_id}/${data.id}/${data.player_id}`)
     } catch (error) {
         throw new Error('Error rised while geting slot info...')
     }

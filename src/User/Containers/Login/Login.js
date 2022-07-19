@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import '../../Assets/Styles/Login/Login.scss'
 import Api from '../../../api/'
 import { PlayerActions } from '../../../api/actions'
+import { useNavigate } from 'react-router-dom'
 
 const Login = ({ setPlayerData, setLoggingStatus }) => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const navigate = useNavigate()
 
     const handleLogin = () => {
         Api.user(PlayerActions.PLAYER_LOGIN, {
@@ -14,6 +16,7 @@ const Login = ({ setPlayerData, setLoggingStatus }) => {
         }).then(resp => {
             setPlayerData(resp.data)
             setLoggingStatus(true)
+            navigate("/home", { replace: true })
         }).catch(err => {
             console.log('Error while trying to login' + err)
         })

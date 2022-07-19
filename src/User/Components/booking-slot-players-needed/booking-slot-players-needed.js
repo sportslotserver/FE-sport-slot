@@ -3,15 +3,13 @@ import { PeopleFill } from "react-bootstrap-icons";
 import { useState } from 'react';
 
 
-function BookingSlotPlayersNeeded(props){
-
-    const {setStep, setPlayersNeeded} = props
+function BookingSlotPlayersNeeded({ setPlayersNeeded }){
 
     const [selectedIndex, setSelectedIndex] = useState(-1)
 
     const array = [2,4,6,8,10,12,14,16]
 
-    const handleClickItem = (item,index) => {
+    const handleClickItem = (item, index) => {
         setPlayersNeeded(item)
         setSelectedIndex(index)
     }
@@ -21,16 +19,12 @@ function BookingSlotPlayersNeeded(props){
         <div className="booking-slot-players-needed-container">
             {
                 array.map((item,index) => 
-                    <div className={selectedIndex === index ? "selected":"unselected"} onClick={()=>{handleClickItem(item,index)}}>
-                        <PeopleFill/><br/>
+                    <div className={selectedIndex === index ? "selected":"unselected"} onClick={()=>{handleClickItem(item, index)}}>
+                        <PeopleFill key={index} /><br/>
                         {item}
                     </div>
                 )
             }
-        
-        </div>
-        <div className="booking-slot-players-needed-next-button-container">
-            <button className="green-button" onClick={setStep}>Next</button>
         </div>
         </>
         );

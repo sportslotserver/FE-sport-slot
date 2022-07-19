@@ -1,9 +1,7 @@
 import '../../Assets/Styles/BookingSlotShareTheCost/BookingSlotShareTheCost.scss'
 import Icon from '../../Assets/Images/SlotTypes/icon_1.png'
 
-function BookingSlotShareTheCost(props){
-
-    const {setStep} = props
+function BookingSlotShareTheCost({ setStep } ){
     return(
         <div className="booking-slot-share-the-cost-container">
             <div className="booking-slot-share-the-cost-heading-1">Share the cost</div>

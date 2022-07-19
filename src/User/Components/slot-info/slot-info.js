@@ -16,11 +16,11 @@ const SlotInfo = ({ slotData }) => {
                     <div className="heading-3 secondary-text-color">{ slot?.slot_date } / { slot?.slot_start_time } to { slot?.slot_end_time }</div>
                     { slot?.slot_has_reservation ?
                         <>
-                            <p className="heading-2 green-text">${ reservation?.price_per_person } <span className="heading-4 secondary-text-color">per person</span></p>
+                            <p className="heading-2 green-text">${ Math.round(reservation?.price_per_person) } <span className="heading-4 secondary-text-color">per person</span></p>
                             <p className="heading-2 green-text">Players needed: <b>{ reservation?.players_accepted } / { reservation?.players_needed }</b></p>
                         </>
                     : 
-                        <p className="heading-2 green-text">$32 <span className="heading-4 secondary-text-color">per hour</span></p>
+                        <p className="heading-2 green-text">${ slot?.slot_price } <span className="heading-4 secondary-text-color">per hour</span></p>
                     }
                 </div>
                 <div className="booking-slot-info-child">

@@ -20,8 +20,7 @@ function BookingSlot(){
     const [ slotData, setSlotData ] = useState(null)
 
     useEffect(() => {
-        console.log(type)
-        Api.slot(SlotActions.GET_COURT_SLOT_INFO, { court_id, id }).then(response => {
+        Api.slot(SlotActions.GET_COURT_SLOT_INFO, { court_id, id, player_id }).then(response => {
             setSlotData(response.data)
         }).catch(err => {
             console.log(err)
@@ -34,7 +33,13 @@ function BookingSlot(){
         <div className="booking-main-container">
             <div className="booking-container">
                 { slotData ? <SlotInfo slotData={slotData} /> : null }
-                { slotData ? <BookingSlotSteps data={slotData} player_id={player_id} type={type}/> : null }
+                { slotData ? <BookingSlotSteps 
+                                data={slotData} 
+                                court_id={court_id} 
+                                id={id} 
+                                player_id={player_id} 
+                                type={type}/> 
+                            : null }
                 {/* <CancellationPolicy/> */}
             </div>
         </div>

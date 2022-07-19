@@ -7,41 +7,41 @@ import { Search } from "react-bootstrap-icons";
 import Api from '../../../api/'
 import { PlayerActions } from '../../../api/actions';
 
-function BookingSlotInvitePlayers(props){
+function BookingSlotInvitePlayers({ addPlayersToInvitation, players }){
 
-    const {setStep, handleInvitePlayer} = props
+    console.log('da li su stigli: ', players)
 
-    const [activePage, setActivePage]= useState(1)
-    const pageRangeDisplayed = 3
-    const [itemsCountPerPage,setItemsCountPerPage] = useState(5)
+    // const [activePage, setActivePage]= useState(1)
+    // const pageRangeDisplayed = 3
+    // const [itemsCountPerPage,setItemsCountPerPage] = useState(5)
 
-    const [players, setPlayers] = useState([])
+    // const [players, setPlayers] = useState([])
 
-    const [displayedItems, setDisplayeditems] = useState([])
+    // const [displayedItems, setDisplayeditems] = useState([])
 
-    const getPlayers = () => {
-        Api.user(PlayerActions.GET_ALL_PLAYERS)
-            .then(response => {
-            console.log(response)
-            setPlayers(response.data)
-        }).catch(err => {
-            throw new Error(err)
-        })
-    }
+    // const getPlayers = () => {
+    //     Api.user(PlayerActions.GET_ALL_PLAYERS)
+    //         .then(response => {
+    //         console.log(response)
+    //         setPlayers(response.data)
+    //     }).catch(err => {
+    //         throw new Error(err)
+    //     })
+    // }
 
-    useEffect(()=>{
-        if(players.length === 0)
-            getPlayers()
-    },[players])
+    // useEffect(()=>{
+    //     if(players.length === 0)
+    //         getPlayers()
+    // },[players])
     
 
-    useEffect(()=>{
-        var items = []
-        for(var i=(activePage*itemsCountPerPage)-itemsCountPerPage;i<(activePage*itemsCountPerPage);i++)
-            if(players[i])
-                items.push(players[i])
-        setDisplayeditems(items)
-    },[activePage,itemsCountPerPage,players])
+    // useEffect(()=>{
+    //     var items = []
+    //     for(var i=(activePage*itemsCountPerPage)-itemsCountPerPage;i<(activePage*itemsCountPerPage);i++)
+    //         if(players[i])
+    //             items.push(players[i])
+    //     setDisplayeditems(items)
+    // },[activePage,itemsCountPerPage,players])
 
     return(
         <>
@@ -52,17 +52,17 @@ function BookingSlotInvitePlayers(props){
         </div>
         <div className="invite-players-container">
             {
-                displayedItems.map((player) => 
-                    <PlayerCard key={player.id} player={player} direction={"horizontal"} details={false} handleInvitePlayer={handleInvitePlayer}/>
+                players?.map((player) => 
+                    <PlayerCard key={player.id} player={player} direction={"horizontal"} details={false} addPlayersToInvitation={addPlayersToInvitation}/>
                 )
             }
         </div>
-        <div className="pagination-container">
+        {/* <div className="pagination-container">
             <CustomPagination totalItemsCount={players.length} pageRangeDisplayed={pageRangeDisplayed} itemsCountPerPage={itemsCountPerPage} activePage={activePage} setActivePage={setActivePage}/>
         </div>
         <div className="next-button-container">
             <button className="green-button" onClick={setStep}>Next</button>
-        </div>
+        </div> */}
         </>
     );
 }

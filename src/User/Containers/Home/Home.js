@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import '../../Assets/Styles/Home/Home.scss'
 import HomeSlider from "../../Components/home-slider/home-slider";
 import HomeSearch from "../../Components/home-search/home-search";
@@ -25,13 +25,25 @@ const Home = () => {
         setShowInvitePlayerModal(false)
     }
 
-    const search = () => {
-        Api.slot(SlotActions.FILTERING_SLOTS, params)
+    useEffect(() => {
+        const param = localStorage.getItem('slotSearch')
+        if (param == "{}") {
+            // search({})
+        } else {
+            let params = JSON.parse(param)
+            setParams(params)
+            // search(params)
+        }
+    }, [])
+
+    const search = (param) => {
+        Api.slot(SlotActions.FILTERING_SLOTS, param)
             .then(response => {
                 setSlots(response.data.body)
             }).catch(err => {
                 console.log(err)
             })
+        localStorage.setItem("slotSearch", JSON.stringify(param))
     }
     
     return(

@@ -31,12 +31,12 @@ function PersonalInfoInput(props){
                 placeholders.map((placeholder,index) =>(<input type="text" key={index} placeholder={placeholder} disabled={showEdit ? true : false}/>))
             }
             
-            <div className="personal-info-input-footer">
+            {/* <div className="personal-info-input-footer">
             {
                 verified && verifiedText &&
                 <h5><Check className="green-text" style={{fontSize: 22}}/><b>Verified</b>{verifiedText}</h5>
             }
-            </div>
+            </div> */}
         </div>
     )
 }
