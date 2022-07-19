@@ -49,3 +49,11 @@ export const getPlayerPaymentMethods = async (id) => {
         throw new Error('Error rised in get all players... ')
     }
 }
+
+export const updatePlayerAccoutn = async (data) => {
+    try {
+        return await axios.put(`${Config.baseURL}${Routes.UPDATE_PLAYER_ACCOUNT}`, data)
+    } catch (error) {
+        throw new Error('Error rised while updating player accoutn ')
+    }
+}

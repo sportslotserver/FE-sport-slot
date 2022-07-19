@@ -29,6 +29,15 @@ function Account(){
         }
     }, [player])
 
+    const updatePlayerData = (data) => {
+        data.id = player?.id
+        Api.user(PlayerActions.UPDATE_PLAYER_PROFILE, data).then(response => {
+            console.log('sta se desilo', response)
+        }).catch(err => {
+            console.log('evo ga error: ', err)
+        })
+    }
+
     return(
         <div className="account-container">
             <h1>Account</h1>
@@ -50,11 +59,11 @@ function Account(){
                 </div>
             </div>
             <div>
-                {selectedTabIndex === 1 && <PersonalInfo player={player} /> }
-                {selectedTabIndex === 2 && <LoginAndSecurity/> }
+                {selectedTabIndex === 1 && <PersonalInfo player={player} update={updatePlayerData} /> }
+                {selectedTabIndex === 2 && <LoginAndSecurity player={player} update={updatePlayerData} /> }
                 {selectedTabIndex === 3 && <Payments player={player}/> }
-                {selectedTabIndex === 4 && <EditProfile preview={false}/> }
-                {selectedTabIndex === 5 && <AccountNotifications/> }
+                {selectedTabIndex === 4 && <EditProfile player={player} preview={false} update={updatePlayerData} /> }
+                {selectedTabIndex === 5 && <AccountNotifications player={player} update={updatePlayerData} /> }
             </div>
         </div>
     )

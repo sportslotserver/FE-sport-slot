@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import {Link } from "react-router-dom";
 import Layer1 from '../../Assets/Images/Header/Layer1.png'
 
@@ -9,6 +9,10 @@ function NavbarUserButton({ playerData }){
     const handleMenu = () => {
         setMenuIsOpen(!menuIsOpen)
     }
+
+    useEffect(() => {
+        console.log('da li je otvore menu: ', menuIsOpen)
+    }, [])
 
     return(
         <>

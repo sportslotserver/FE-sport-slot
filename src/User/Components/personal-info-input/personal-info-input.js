@@ -1,17 +1,32 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import '../../Assets/Styles/PersonalInfo/PersonalInfo.scss'
 import { Check } from "react-bootstrap-icons";
 
+
 function PersonalInfoInput(props){
 
-    const {label, handleSave, placeholders, verified, verifiedText} = props
+    const {label, name, update, value, type, verified, verifiedText} = props
     const [showEdit,setShowEdit] = useState(true)
+    const [inputValue, setInputValue] = useState('')
+    const inputRef = useRef(null);
+    
+    useEffect(() => {
+        setInputValue(value)
+    }, [value])
 
-    const handleEdit = () => {
-        setShowEdit(!showEdit)
-    }
-    const handleCancel = () => {
-        setShowEdit(!showEdit)
+    const saveChanges = () => {
+        if (inputValue !== '') {
+            if (inputRef.current.name !== 'email') {
+                update({ [inputRef.current.name]: inputValue })
+                setShowEdit(true)
+            } else {
+                setInputValue(value)
+                setShowEdit(true)
+            }
+        } else {
+            setInputValue(value)
+            setShowEdit(true)
+        }
     }
 
     return(
@@ -19,17 +34,40 @@ function PersonalInfoInput(props){
             <div className="personal-info-input-header">
                 <h4><b>{label}</b></h4>
                 <div>
-                    {
-                        showEdit ?
-                        <h5 style={{cursor: "pointer"}}><b className="green-text" onClick={()=>{setShowEdit(false)}}>Edit</b></h5>
-                        :
-                        <h5 style={{cursor: "pointer"}}><b className="orange-text" style={{marginRight: 10}} onClick={()=>{setShowEdit(true)}}>Cancel </b><b className="green-text"> Save</b></h5>
+                    {  
+                        name !== 'email' ?
+                            showEdit ?
+                            <h5 style={{cursor: "pointer"}}><b className="green-text" onClick={()=>{setShowEdit(false)}}>Edit</b></h5>
+                            :
+                            <h5 style={{cursor: "pointer"}}>
+                                <b className="orange-text" style={{marginRight: 10}} onClick={()=>{setShowEdit(true)}}>Cancel </b>
+                                <b className="green-text" onClick={saveChanges}> Save</b>
+                            </h5>
+                        : null
                     }
                 </div>
             </div>
-            {
-                placeholders.map((placeholder,index) =>(<input type="text" key={index} placeholder={placeholder} disabled={showEdit ? true : false}/>))
-            }
+            
+            { type === 'text' ?
+                <input 
+                    ref={inputRef} 
+                    type="text" 
+                    name={name} 
+                    value={inputValue} 
+                    onChange={(e) => setInputValue(e.target.value)} 
+                    disabled={ name !== 'email' ? showEdit ? true : false : true }/>
+            : null }    
+            
+            { type === 'select' ?
+                <select 
+                    name={name} 
+                    ref={inputRef} 
+                    onChange={(e) => setInputValue(e.target.value)} 
+                    disabled={ name !== 'email' ? showEdit ? true : false : true }>
+                        <option selected={value == "basketball" ? true : false} value="basketball">Basketball</option>
+                        <option selected={value == "football" ? true : false} value="football">Football</option>
+                </select>
+            : null }
             
             {/* <div className="personal-info-input-footer">
             {
