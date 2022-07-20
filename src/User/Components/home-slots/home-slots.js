@@ -11,45 +11,36 @@ const HomeSlots = ({ slots }) => {
     const [displayedItems, setDisplayeditems] = useState([])
 
     console.log(slots)
-    
-    // var slots = []
-    // for(var i=0;i<46;i++)
-    //     slots.push("Item "+i)
+ 
+    useEffect(()=>{
+        var items = []
+        for(var i=(activePage*itemsCountPerPage)-itemsCountPerPage;i<(activePage*itemsCountPerPage);i++)
+            if(slots[i])
+                items.push(slots[i])
+        setDisplayeditems(items)
+     },[activePage,itemsCountPerPage])
 
-    // useEffect(()=>{
-    //     var items = []
-    //     for(var i=(activePage*itemsCountPerPage)-itemsCountPerPage;i<(activePage*itemsCountPerPage);i++)
-    //         if(slots[i])
-    //             items.push(slots[i])
-    //     setDisplayeditems(items)
-    // },[activePage,itemsCountPerPage])
-
-    // const handleResize =()=>{
-    //     var slotsContainer = document.getElementById('slots-container')
-    //     if(parseInt(slotsContainer.clientWidth/230)===3)
-    //         setItemsCountPerPage(9)
-    //     else
-    //         setItemsCountPerPage(8)
-    // }
+    const handleResize =()=>{
+      var slotsContainer = document.getElementById('slots-container')
+       if(parseInt(slotsContainer.clientWidth/230)===3)
+            setItemsCountPerPage(9)
+        else
+             setItemsCountPerPage(8)
+     }
     
-    // useEffect(()=>{
-    //     window.addEventListener('resize', handleResize)
-    //     var slotsContainer = document.getElementById('slots-container')
-    //     if(parseInt(slotsContainer.clientWidth/230)===3)
-    //         setItemsCountPerPage(9)
-    //     else
-    //         setItemsCountPerPage(8)
-    // })
+     useEffect(()=>{
+         window.addEventListener('resize', handleResize)
+     })
     
     return(
         <div className="home-slots-main-container">
             <div className="home-slots-container" id="slots-container">
-                {slots.map((slot, index)=>(
+                {displayedItems.map((slot, index)=>(
                     <SlotCard key={index} slot={slot}/>
                 ))}
             </div>
             <div className="home-slots-pages-container">
-                <CustomPagination totalItemsCount={slots.length} pageRangeDisplayed={pageRangeDisplayed} itemsCountPerPage={8} activePage={activePage} setActivePage={setActivePage}/>
+                <CustomPagination totalItemsCount={slots.length} pageRangeDisplayed={pageRangeDisplayed} itemsCountPerPage={itemsCountPerPage} activePage={activePage} setActivePage={setActivePage}/>
             </div>
         </div>
     );

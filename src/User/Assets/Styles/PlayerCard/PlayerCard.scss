@@ -46,9 +46,17 @@ $cardBorderColor: rgb(237,237,237);
     height: 30px;
     background-color: $inviteButtonColor;
     border-radius: 15px;
-    border: 2px solid $inviteButtonColor;
+    border: 1px solid $inviteButtonColor;
     font-size: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
     color: $secondaryTextColor;
+    text-decoration: none;
+    padding-top: 2px;
+}
+.player-card-button:hover{
+    color: $secondaryTextColor;
+    border: 1px solid $secondaryTextColor;
 }
 .margin-top-20{
     margin: 20px auto;

@@ -3,10 +3,10 @@ import '../../Assets/Styles/PlayerCard/PlayerCard.scss'
 import Image1 from '../../Assets/Images/PlayerCard/image1.png'
 import {ThreeDotsVertical} from "react-bootstrap-icons"
 import { setCapitalLetter } from '../../../utils/capital-letter'
+import { Link } from "react-router-dom";
 
-function PlayerCard({ direction, inviteButton, player, handleInvitePlayer, details, addPlayersToInvitation }){
-
-    console.log('jedan player: ', player)
+function PlayerCard({ direction, inviteButton, player, handleInvitePlayer, details, addPlayersToInvitation, directInvite }){
+    
     return(
         <div className={direction === "vertical" ? "player-card-container-vertical" : "player-card-container-horizontal"}>
             <img src={Image1} className="player-card-image"/>
@@ -32,10 +32,16 @@ function PlayerCard({ direction, inviteButton, player, handleInvitePlayer, detai
                         <ThreeDotsVertical/>
                     </div>
                     :
-                    <button 
-                        className={direction === "vertical" ? "player-card-button margin-top-20":"player-card-button"} 
+                    <>
+                    {
+                        directInvite ?
+                        <button className={direction === "vertical" ? "player-card-button margin-top-20":"player-card-button"} 
                         // onClick={() => addPlayersToInvitation(player.id)}
                         >Invite to slot</button>
+                        :
+                        <Link className="player-card-button margin-top-20" to={`/invite-player/${player.id}`}>Invite to slot</Link>
+                    }
+                    </>
                 }
             </div>
             </div>

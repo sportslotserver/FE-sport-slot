@@ -1,4 +1,4 @@
-import '../../Assets/Styles/FindSlot/FindSlot.scss'
+import '../../Assets/Styles/CourtDetails/CourtDetails.scss'
 import ImageSwiper from "../../Components/image-swiper/image-swiper";
 import img1 from '../../Assets/Images/ImageSwiper/1.png'
 import img2 from '../../Assets/Images/ImageSwiper/2.png'
@@ -8,14 +8,14 @@ import SlotInfo from "../../Components/slot-info/slot-info";
 import SearchSlot from '../../Components/search-slot/search-slot';
 import MapLocation from '../../Components/map-location/map-location';
 
-function FindSlot(){
+function CourtDetails(){
     var images = [img1,img2,img3,img4]
     return(
         <>
         <ImageSwiper images={images}/>
         <div className="find-slot-main-container">
             <div className="find-slot-container">
-                <SlotInfo/>
+                {/*<SlotInfo/> nema podatke pa pravi probleme*/}
                 <SearchSlot/>
                 <MapLocation/>
             </div>
@@ -24,4 +24,4 @@ function FindSlot(){
     )
 }
 
-export default FindSlot
+export default CourtDetails

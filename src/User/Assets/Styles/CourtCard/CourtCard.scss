@@ -1,0 +1,90 @@
+$titleColor: rgb(240,103,35);
+$inputBorderColor: rgb(215,215,215);
+$buttonColor: rgb(55,180,74);
+$primaryTextColor: black;
+$secondaryTextColor: rgb(120,120,120);
+$cardBorderColor: rgb(237,237,237);
+
+.court-card-container{
+    min-width: 200px;
+    background-color: white;
+    margin:10px auto;
+    padding: 5px;
+    padding-top: 10px;
+    border: 1px solid $cardBorderColor;
+    border-radius: 5px;
+}
+.court-card-container:hover{
+    transform: scale(1.03);
+}
+.court-card-image{
+    width: 100%;
+}
+.court-card-title{
+    max-width: 100%;
+    font-weight: bold;
+    color: $primaryTextColor;
+    font-size: 16px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.court-card-text{
+    max-width: 100%;
+    color: $secondaryTextColor;
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.court-card-footer{
+    display: flex;
+    align-items: flex-end;
+    padding: 5px;
+    justify-content: space-between;
+}
+.court-card-footer-button{
+ /*   height: 35px;
+    background-color: $buttonColor;
+    border-radius: 17px;
+    border: 2px solid $buttonColor;
+    font-size: 16px;
+    color: white;
+    margin-top: 5px;
+    width: 100px;
+    font-weight: bolder;*/
+}
+.court-card-footer-button{
+    display: flex;
+    justify-content: end;
+    width: 60%;
+}
+.court-card-button{
+    padding-top: 2px;
+    margin-bottom: 5px;
+    height: 30px;
+    background-color: $buttonColor;
+    border-radius: 15px;
+    border: 2px solid $buttonColor;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    width: 100px;
+    text-decoration: none;
+    text-align: center;
+}
+.court-card-button:hover{
+    background-color: white;
+    color: $buttonColor;
+}
+.court-card-footer-price{
+    color: $buttonColor;
+    font-size: 22px;
+}
+.court-card-footer-per{
+    color: $secondaryTextColor;
+    font-size: 10px;
+}
+@media screen and(max-width: 768px) {
+    .court-card-container{
+        min-width: 180px;
+    }
+}

@@ -12,13 +12,14 @@ import MyGames from './User/Containers/MyGames/MyGames';
 import SlotDetails from './User/Containers/SlotDetails/SlotDetails';
 import Notifications from './User/Containers/Notifications/Notifications';
 import Location from './User/Containers/Location/Location';
-import FindSlot from './User/Containers/FindSlot/FindSlot';
+import CourtDetails from './User/Containers/CourtDetails/CourtDetails';
 import Account from './User/Containers/Account/Account';
 import PreviewProfile from './User/Containers/PreviewProfile/PreviewProfile';
 import OwnerAdminNavbar from './OwnerAdmin/Components/owner-admin-navbar/owner-admin-navbar';
 import OwnerAdminCourts from './OwnerAdmin/Containers/OwnerAdminCourts/OwnerAdminCourts';
 import ManageCourt from './OwnerAdmin/Containers/ManageCourt/ManageCourt';
 import { useState, useEffect } from 'react'
+import InvitePlayer from './User/Containers/InvitePlayer/InvitePlayer';
 
 function App() {
 
@@ -45,12 +46,13 @@ function App() {
           <Route path="/my_games" element={<MyGames/>}/>
           <Route path="/details" element={<SlotDetails/>}/>
           <Route path="/notifications" element={<Notifications/>}/>
-          <Route path="/find" element={<FindSlot/>}/>
+          <Route path="/court-details" element={<CourtDetails/>}/>
           <Route path="/location" element={<Location/>}/>
           <Route path="/account/:id" element={<Account/>}/>
           <Route path="/selected-profile" element={<PreviewProfile/>}/>
           <Route path="/owner-admin-courts" element={<OwnerAdminCourts/>}/>
           <Route path="/manage-slots" element={<ManageCourt/>}/>
+          <Route path="/invite-player/:player_id" element={<InvitePlayer/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>
