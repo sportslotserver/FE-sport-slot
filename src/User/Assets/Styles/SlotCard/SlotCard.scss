@@ -14,6 +14,9 @@ $cardBorderColor: rgb(237,237,237);
     border: 1px solid $cardBorderColor;
     border-radius: 5px;
 }
+.slot-card-container:hover{
+    transform: scale(1.03);
+}
 .slot-card-image{
     width: 100%;
 }
@@ -34,6 +37,7 @@ $cardBorderColor: rgb(237,237,237);
 }
 .slot-card-footer{
     display: flex;
+    align-items: flex-end;
     padding: 5px;
     justify-content: space-between;
 }
@@ -52,21 +56,25 @@ $cardBorderColor: rgb(237,237,237);
     display: flex;
     flex-direction: column;
     justify-content: end;
+    width: 60%;
 }
 .slot-card-button{
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-top: 2px;
     margin-bottom: 5px;
     height: 30px;
     background-color: $buttonColor;
     border-radius: 15px;
     border: 2px solid $buttonColor;
-    font-size: 16px;
+    font-size: 14px;
     color: white;
     font-weight: bold;
     min-width: 100px;
     text-decoration: none;
     text-align: center;
+}
+.slot-card-button:hover{
+    background-color: white;
+    color: $buttonColor;
 }
 .slot-card-footer-price{
     color: $buttonColor;
