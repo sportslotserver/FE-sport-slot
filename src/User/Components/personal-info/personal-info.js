@@ -8,7 +8,7 @@ function PersonalInfo({ player, update }){
             <PersonalInfoInput type={`text`} label={"Date of birth"} update={update} name="birthday" value={player?.birthday}/>
             <PersonalInfoInput type={`text`} label={"State"} name="state" update={update} value={player?.state}/>
             <PersonalInfoInput type={`text`} label={"City"} name="city" update={update} value={player?.city}/>
-            <PersonalInfoInput type={`text`} label={"Height"} name="height" update={update} value={`player?.height} cm`}/>
+            <PersonalInfoInput type={`text`} label={"Height cm"} name="height" update={update} value={player?.height}/>
             <PersonalInfoInput type={`text`} label={"Gender"} name="gender" update={update} value={player?.gender}/>
             <PersonalInfoInput type={`select`} label={"Prefered sport"} name="prefered_sport" update={update} value={player?.prefered_sport}/>
             <PersonalInfoInput type={`text`} label={"Email address"} name="email" update={update} value={player?.email} verified={player?.email_verified} verifiedText={"if email is changed, another verification is required"}/>

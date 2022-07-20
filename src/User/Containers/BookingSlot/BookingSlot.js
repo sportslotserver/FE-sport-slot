@@ -16,11 +16,11 @@ import { SlotActions } from '../../../api/actions'
 function BookingSlot(){
     var images = [img1,img2,img3,img4]
 
-    const { court_id, id, player_id, type } = useParams()
+    const { court_id, id, player_id, reservation_id, type } = useParams()
     const [ slotData, setSlotData ] = useState(null)
 
     useEffect(() => {
-        Api.slot(SlotActions.GET_COURT_SLOT_INFO, { court_id, id, player_id }).then(response => {
+        Api.slot(SlotActions.GET_COURT_SLOT_INFO, { court_id, id, player_id, reservation_id }).then(response => {
             setSlotData(response.data)
         }).catch(err => {
             console.log(err)

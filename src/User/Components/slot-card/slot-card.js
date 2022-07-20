@@ -39,8 +39,8 @@ const SlotCard = ({
                     <div className="slot-card-footer">
                         <div className="slot-card-footer-left"><div className="slot-card-footer-price">${ reservation.price_per_person }</div><div className="slot-card-footer-per">per person</div></div>
                         <div className="slot-card-footer-buttons">
-                            <Link className="green-button" to={`/booking/${court_id}/${id}/${playerID}/join`}>Join group</Link>
-                            <Link className="green-button" to={`/booking/${court_id}/${id}/${playerID}/direct`}>Book slot</Link>
+                            <Link className="green-button" to={`/booking/${court_id}/${id}/${playerID}/${slot_reservation_id}/join`}>Join group</Link>
+                            <Link className="green-button" to={`/booking/${court_id}/${id}/${playerID}/${slot_reservation_id}/direct`}>Book slot</Link>
                         </div>
                     </div>
                 </>
@@ -49,8 +49,8 @@ const SlotCard = ({
                     <div className="slot-card-footer">
                         <div className="slot-card-footer-left"><div className="slot-card-footer-price">${ slot_price }</div><div className="slot-card-footer-per">per hour</div></div>
                         <div className="slot-card-footer-buttons">
-                            <Link className="slot-card-button" to={`/booking/${court_id}/${id}/${playerID}/group`}>Create group</Link>
-                            <Link className="slot-card-button" to={`/booking/${court_id}/${id}/${playerID}/direct`}>Book slot</Link>
+                            <Link className="slot-card-button" to={`/booking/${court_id}/${id}/${playerID}/${slot_reservation_id}/group`}>Create group</Link>
+                            <Link className="slot-card-button" to={`/booking/${court_id}/${id}/${playerID}/${slot_reservation_id}/direct`}>Book slot</Link>
                         </div>
                     </div>
                 </> 
