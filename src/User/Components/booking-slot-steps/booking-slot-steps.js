@@ -14,6 +14,8 @@ import AreYouSure from '../booking-slot-are-you-sure/booking-slot-are-you-sure';
 import SelectSport from '../select-sport/select-sport';
 import { getSlotPlayers } from '../../../api/endpoints/user'
 import { createGroup, directBook } from '../../../api/endpoints/slots'
+import BookingSlotShareTheCost from '../booking-slot-share-the-cost/booking-slot-share-the-cost';
+import BookingSlotError from '../booking-slot-error/booking-slot-error';
 
 // import Api from '../../../api/'
 // import { SlotActions, PlayerActions } from '../../../api/actions';
@@ -22,10 +24,14 @@ const BookingSlotSteps = ({ data, id, player_id, type }) => {
 
     const [ step, setStep ] = useState(0)
 
+    console.log(data)
+
     const [ sport, setSport ] = useState(null)
     const [ playersNeeded, setPlayersNeeded ] = useState(null)
     const [ players, setPlayers ] = useState([])
     const [ invitedPlayers, setInvitedPlayers ] = useState(["5819996638", "2087912033", "4654458217"])
+
+    const [slotSuccessfulyCreated, setSlotSuccessfulyCreated] = useState(null)
 
     useEffect(() => {
         getSlotPlayers({
@@ -48,8 +54,11 @@ const BookingSlotSteps = ({ data, id, player_id, type }) => {
             reservation_type: type,
             has_reservation: data?.slot?.slot_has_reservation
         }).then(response => {
+            setSlotSuccessfulyCreated(true)
             setStep(step + 1)
         }).catch(err => {
+            setSlotSuccessfulyCreated(false)
+            setStep(step + 1)
             throw new Error(err)
         })
     }
@@ -63,8 +72,11 @@ const BookingSlotSteps = ({ data, id, player_id, type }) => {
             players_needed: playersNeeded,
             players: invitedPlayers
         }).then(response => {
+            setSlotSuccessfulyCreated(true)
             setStep(step + 1)
         }).catch(err => {
+            setSlotSuccessfulyCreated(false)
+            setStep(step + 1)
             throw new Error(err)
         })
     }
@@ -80,33 +92,54 @@ const BookingSlotSteps = ({ data, id, player_id, type }) => {
                 <>
                     { step === 0 ? 
                         <>
-                            <SelectSport sports={data?.slot?.slot_available_sports} sport={sport} setSport={setSport} />
-                            <button disabled={sport ? false : true} onClick={() => setStep(step + 1)}>Next</button>
+                            <div className="booking-slot-steps-container-1">
+                                <h1>Step 1/3: Reservation details</h1>
+                                <input placeholder={"Total players needed"} value={playersNeeded ? playersNeeded : ""} onChange={(e)=>{setPlayersNeeded(e.target.value)}}/>
+                                <BookingSlotShareTheCost setStep={()=>{setStep(step + 1)}} slotPrice={data.slot.slot_price} playersNeeded={playersNeeded}/>
+                            </div>
                         </>
                     : null }
                     { step === 1 ? 
                         <>
-                            <BookingSlotPlayersNeeded setPlayersNeeded={setPlayersNeeded} /> 
-                            <button disabled={playersNeeded ? false : true} onClick={() => setStep(step + 1)}>Next</button>
+                            <div className="booking-slot-steps-container-1">
+                                <h1>Step 2/3: Select sport</h1>
+                                <SelectSport sports={data?.slot?.slot_available_sports} sport={sport} setSport={setSport} />
+                                <button disabled={sport ? false : true} onClick={() => setStep(step + 1)}>Next</button>
+                            </div>
+                            
                         </>
                     : null }
                     { step === 2 ? 
                         <>
-                            <BookingSlotInvitePlayers players={players} addPlayersToInvitation={addPlayersToInvitation} /> 
-                            <button disabled={invitedPlayers.length !== 0 ? false : true} onClick={() => setStep(step + 1)}>Next</button>
+                            <div className="booking-slot-steps-container-1">
+                                <h1>Step 3/3: Invite players</h1>
+                                <BookingSlotInvitePlayers players={players} addPlayersToInvitation={addPlayersToInvitation} /> 
+                                <button className="green-button" disabled={invitedPlayers.length !== 0 ? false : true} onClick={() => setStep(step + 1)}>Next</button>
+                            </div>
                         </>
-                    : null }     
+                    : null }
                     { step === 3 ?
                         <>
                             <BookingSlotConfirmation
                                 playersNeeded={playersNeeded}
-                                slotData={data?.slot}
+                                data={data}
                                 pricePerPerson={parseInt(data?.slot?.slot_price) / playersNeeded}
                                 type={"share-the-cost"} 
                                 handleDone={()=>{handleCreateGroup()}} />
                         </> 
                     : null }
-                    { step === 4 ? <ConfirmationSlotCreated /> : null }
+                    { step === 4 ? 
+                    <>
+                    {
+                        slotSuccessfulyCreated ?
+                        <ConfirmationSlotCreated />
+                        :
+                        <>
+                        <BookingSlotError tryAgain={()=>{handleCreateGroup()}}/>
+                        </>
+                    }
+                    </>
+                    : null }
                 </>
             : null }
 
@@ -118,7 +151,44 @@ const BookingSlotSteps = ({ data, id, player_id, type }) => {
 
                     { !data?.is_admin_player ? 
                         <>
-                            { step === 0 ?
+                            { step === 0 ? 
+                            <>
+                                <div className="booking-slot-steps-container-1">
+                                    <h1>Step 1/3: Reservation details</h1>
+                                    <input placeholder={"Total players needed"} value={playersNeeded ? playersNeeded : ""} onChange={(e)=>{setPlayersNeeded(e.target.value)}}/>
+                                    <BookingSlotBuyNow slotData={data?.slot} reservationData={data?.reservation} setStep={() => setStep(step + 1)}/>
+                                </div>
+                            </>
+                            : null }
+                            { step === 1 ?
+                                <>
+                                    <SelectSport sports={data?.slot?.slot_available_sports} sport={sport} setSport={setSport} />
+                                    <button disabled={sport ? false : true} onClick={() => setStep(step + 1)}>Next</button>
+                                </>
+                            : null }
+                            { step === 2 ?
+                        <>
+                            <BookingSlotConfirmation
+                                playersNeeded={playersNeeded}
+                                data={data}
+                                pricePerPerson={parseInt(data?.slot?.slot_price) / playersNeeded}
+                                type={"pay-now"} 
+                                handleDone={()=>{handleDirectBook()}} />
+                        </> 
+                    : null }
+                    { step === 3 ? 
+                    <>
+                    {
+                        slotSuccessfulyCreated ?
+                        <ConfirmationSlotCreated />
+                        :
+                        <>
+                        <BookingSlotError tryAgain={()=>{handleCreateGroup()}}/>
+                        </>
+                    }
+                    </>
+                    : null }
+                            {/* step === 0 ?
                                 <>
                                     <SelectSport sports={data?.slot?.slot_available_sports} sport={sport} setSport={setSport} />
                                     <button disabled={sport ? false : true} onClick={() => setStep(step + 1)}>Next</button>
@@ -135,7 +205,7 @@ const BookingSlotSteps = ({ data, id, player_id, type }) => {
                                     <AreYouSure handleDirectBook={handleDirectBook} />
                                 </>
                             : null }
-                            { step === 3 ? <ConfirmationSlotCreated /> : null }
+                            { step === 3 ? <ConfirmationSlotCreated /> : null */}
                         </>
                     : null }
                 </>

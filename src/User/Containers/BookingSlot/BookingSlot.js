@@ -40,14 +40,14 @@ function BookingSlot(){
                                 player_id={player_id} 
                                 type={type}/> 
                             : null }
-                { slotData?.confirmed_players.length > 0 ? 
+                {/* slotData?.confirmed_players.length > 0 ? 
                     <>
                         <h4>Confirmed Players</h4>
                         { slotData?.confirmed_players.map((player, index) => {
                             return <p>{ player?.full_name }</p>
                         }) }
                     </>
-                : null }
+                    : null */}
                 {/* <CancellationPolicy/> */}
             </div>
         </div>
