@@ -10,10 +10,6 @@ function NavbarUserButton({ playerData }){
         setMenuIsOpen(!menuIsOpen)
     }
 
-    useEffect(() => {
-        console.log('da li je otvore menu: ', menuIsOpen)
-    }, [])
-
     return(
         <>
         <div onClick={handleMenu} style={{display: "flex", maxWidth: 200, justifyContent: "space-between", alignItems: "center",minWidth: 120, backgroundColor: "rgb(36,36,36)", color: "white", fontSize: 14,height: 40, marginLeft: 30, borderRadius: 15}}>

@@ -9,8 +9,7 @@ import SlotInfo from "../../Components/slot-info/slot-info";
 import BookingSlotSteps from "../../Components/booking-slot-steps/booking-slot-steps";
 import CancellationPolicy from "../../Components/cancellation-policy/cancellation-policy";
 import { useParams } from 'react-router-dom'
-import Api from "../../../api"
-import { SlotActions } from '../../../api/actions'
+import { getCourtSlotInfo } from '../../../api/endpoints/slots'
 
 
 function BookingSlot(){
@@ -20,11 +19,12 @@ function BookingSlot(){
     const [ slotData, setSlotData ] = useState(null)
 
     useEffect(() => {
-        Api.slot(SlotActions.GET_COURT_SLOT_INFO, { court_id, id, player_id, reservation_id }).then(response => {
-            setSlotData(response.data)
-        }).catch(err => {
-            console.log(err)
-        })
+        getCourtSlotInfo({ court_id, id, player_id, reservation_id })
+            .then(response => {
+                setSlotData(response.data)
+            }).catch(err => {
+                console.log(err)
+            })
     }, [])
 
     return(
@@ -40,6 +40,14 @@ function BookingSlot(){
                                 player_id={player_id} 
                                 type={type}/> 
                             : null }
+                { slotData?.confirmed_players.length > 0 ? 
+                    <>
+                        <h4>Confirmed Players</h4>
+                        { slotData?.confirmed_players.map((player, index) => {
+                            return <p>{ player?.full_name }</p>
+                        }) }
+                    </>
+                : null }
                 {/* <CancellationPolicy/> */}
             </div>
         </div>
