@@ -7,7 +7,7 @@ function BookingSlotShareTheCost({ setStep, playersNeeded, slotPrice } ){
     const [pricePerPlayer, setPricePerPlayer] = useState()
 
     useEffect(()=>{
-        setPricePerPlayer(playersNeeded !== null ? slotPrice/playersNeeded : slotPrice/2)
+        setPricePerPlayer(playersNeeded !== null ? Math.round(slotPrice/playersNeeded) : Math.round(slotPrice/2))
     },[playersNeeded])
     return(
         <div className="booking-slot-share-the-cost-container">

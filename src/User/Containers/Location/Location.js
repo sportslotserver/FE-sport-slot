@@ -22,9 +22,9 @@ function Location(){
                     {countries.map((option,index) => (
                       <>
                       {index === 0 ?
-                        <option value={option.value} disabled selected hidden>{option.label}</option>
+                        <option value={option.value} disabled selected hidden key={index}>{option.label}</option>
                         :
-                        <option value={option.value}>{option.label}</option>
+                        <option value={option.value} key={index}>{option.label}</option>
                       }
                       </>
                     ))}

@@ -17,20 +17,13 @@ import { createGroup, directBook } from '../../../api/endpoints/slots'
 import BookingSlotShareTheCost from '../booking-slot-share-the-cost/booking-slot-share-the-cost';
 import BookingSlotError from '../booking-slot-error/booking-slot-error';
 
-// import Api from '../../../api/'
-// import { SlotActions, PlayerActions } from '../../../api/actions';
-
 const BookingSlotSteps = ({ data, id, player_id, type }) => {
 
     const [ step, setStep ] = useState(0)
-
-    console.log(data)
-
     const [ sport, setSport ] = useState(null)
     const [ playersNeeded, setPlayersNeeded ] = useState(null)
     const [ players, setPlayers ] = useState([])
     const [ invitedPlayers, setInvitedPlayers ] = useState(["5819996638", "2087912033", "4654458217"])
-
     const [slotSuccessfulyCreated, setSlotSuccessfulyCreated] = useState(null)
 
     useEffect(() => {

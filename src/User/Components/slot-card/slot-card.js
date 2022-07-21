@@ -20,7 +20,7 @@ const SlotCard = ({
         slot_reservation_id
     } 
     }) => {
-    
+
     const [ playerID, setPlayerID ] = useState(null)
     useEffect(() => {
         const player = JSON.parse(sessionStorage.getItem('player'))

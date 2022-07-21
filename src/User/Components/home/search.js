@@ -105,9 +105,9 @@ function HomeSearch(){
                     {sportOptions.map((option,index) => (
                       <>
                       {index === 0 ?
-                        <option value={option.value} disabled selected hidden>{option.label}</option>
+                        <option value={option.value} disabled selected hidden key={index}>{option.label}</option>
                         :
-                        <option value={option.value}>{option.label}</option>
+                        <option value={option.value} key={index}>{option.label}</option>
                       }
                       </>
                     ))}
@@ -116,9 +116,9 @@ function HomeSearch(){
                     {cityOptions.map((option,index) => (
                       <>
                       {index === 0 ?
-                        <option value={option.value} disabled selected hidden>{option.label}</option>
+                        <option value={option.value} disabled selected hidden key={index}>{option.label}</option>
                         :
-                        <option value={option.value}>{option.label}</option>
+                        <option value={option.value} key={index}>{option.label}</option>
                       }
                       </>
                     ))}
@@ -127,9 +127,9 @@ function HomeSearch(){
                     {stateOptions.map((option,index) => (
                       <>
                       {index === 0 ?
-                        <option value={option.value} disabled selected hidden>{option.label}</option>
+                        <option value={option.value} disabled selected hidden key={index}>{option.label}</option>
                         :
-                        <option value={option.value}>{option.label}</option>
+                        <option value={option.value} key={index}>{option.label}</option>
                       }
                       </>
                     ))}
@@ -138,9 +138,9 @@ function HomeSearch(){
                     {bookingTypeOptions.map((option,index) => (
                       <>
                       {index === 0 ?
-                        <option value={option.value} disabled selected hidden>{option.label}</option>
+                        <option value={option.value} disabled selected hidden key={index}>{option.label}</option>
                         :
-                        <option value={option.value}>{option.label}</option>
+                        <option value={option.value} key={index}>{option.label}</option>
                       }
                       </>
                     ))}

@@ -3,8 +3,6 @@ import '../../Assets/Styles/SlotInfo/SlotInfo.scss'
 import OwnerImage from '../../Assets/Images/PlayerCard/image4.png'
 
 const SlotInfo = ({ slotData }) => {
-
-    console.log('slotData: ', slotData)
     const { slot, reservation } = slotData
 
     return(
