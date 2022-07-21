@@ -52,8 +52,8 @@ function BookingSlotInvitePlayers({ addPlayersToInvitation, players }){
         </div>
         <div className="invite-players-container">
             {
-                players?.map((player) => 
-                    <PlayerCard key={player.id} player={player} direction={"horizontal"} details={false} addPlayersToInvitation={addPlayersToInvitation}/>
+                players?.map((player, index) => 
+                    <PlayerCard key={index} player={player} direction={"horizontal"} details={false} addPlayersToInvitation={addPlayersToInvitation}/>
                 )
             }
         </div>

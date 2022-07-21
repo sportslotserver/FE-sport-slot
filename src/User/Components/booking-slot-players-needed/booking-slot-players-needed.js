@@ -19,7 +19,7 @@ function BookingSlotPlayersNeeded({ setPlayersNeeded }){
         <div className="booking-slot-players-needed-container">
             {
                 array.map((item,index) => 
-                    <div className={selectedIndex === index ? "selected":"unselected"} onClick={()=>{handleClickItem(item, index)}}>
+                    <div className={selectedIndex === index ? "selected":"unselected"} key={index} onClick={()=>{handleClickItem(item, index)}}>
                         <PeopleFill key={index} /><br/>
                         {item}
                     </div>

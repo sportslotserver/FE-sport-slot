@@ -3,21 +3,19 @@ import '../../Assets/Styles/CourtCard/CourtCard.scss'
 import SlotImage from '../../Assets/Images/SlotCard/Court_image_2.png'
 import { Link } from 'react-router-dom'
 
-const CourtCard = (props) => {
-
-    const { data } = props
+const CourtCard = ({ court }) => {
     return (
         <div className="court-card-container">
             <img src={SlotImage} className="court-card-image" />
-            <div className="court-card-title">Indoor sports court {data}</div>
-            <div className="court-card-text">Address street name 236b, New York</div>
+            <div className="court-card-title">{ court?.court_name }</div>
+            <div className="court-card-text">{ court?.court_street }, { court?.court_state }, { court?.court_city }</div>
             <div className="court-card-footer">
                 <div className="court-card-footer-left">
-                    <div className="court-card-footer-price">$32</div>
+                    <div className="court-card-footer-price">${ court.court_base_price }</div>
                     <div className="court-card-footer-per">per hour</div>
                 </div>
                 <div className="court-card-footer-button">
-                    <Link className="court-card-button" to={`/court-details`}>More info</Link>
+                    <Link className="court-card-button" to={`/court-details/${court?.id}`}>More info</Link>
                 </div>
             </div>
         </div>

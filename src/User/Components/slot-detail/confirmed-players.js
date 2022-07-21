@@ -7,8 +7,8 @@ function ConfirmedPlayers(props){
     return(
         <div>
             {
-                players.map((player) => 
-                    <PlayerCard player={player} direction={"horizontal"} details={true}/>
+                players.map((player, index) => 
+                    <PlayerCard player={player} direction={"horizontal"} details={true} key={index} />
                 )
             }
         </div>

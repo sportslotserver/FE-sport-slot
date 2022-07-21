@@ -3,8 +3,6 @@ import slotDuration from '../../../utils/calculate-slot-duration';
 
 function BookingSlotPayNow({ slotData, reservationData, setStep }) {
 
-    console.log('data....', slotData)
-
     return (
         <div className={"booking-slot-pay-now-container white-background grey-border"}>
             <div className={"booking-slot-pay-now-heading-1 green-text"}>Pay now</div>

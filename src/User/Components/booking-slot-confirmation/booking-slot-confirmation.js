@@ -2,7 +2,6 @@ import slotDuration from '../../../utils/calculate-slot-duration';
 
 function BookingSlotConfirmation(props) {
     const { type, handleDone, playersNeeded, data, pricePerPerson } = props
-    console.log(data)
 
     return (
         <>

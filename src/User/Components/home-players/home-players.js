@@ -18,7 +18,6 @@ function HomePlayers(props) {
                 .then(response => {
                     setPlayers(response.data)
                     setFilteredPlayers(response.data)
-                    console.log(response.data)
                 }).catch(err => {
                     throw new Error(err)
                 })
@@ -40,8 +39,8 @@ function HomePlayers(props) {
             {
                 filteredPlayers.length > 0 ?
                     <div className="home-players-container">
-                        {filteredPlayers.map((player) => (
-                            <PlayerCard player={player} handleInvitePlayer={handleInvitePlayer} direction={"vertical"} directInvite={false} />
+                        {filteredPlayers.map((player, index) => (
+                            <PlayerCard player={player} handleInvitePlayer={handleInvitePlayer} direction={"vertical"} directInvite={false} key={index} />
                         ))}
                     </div>
                     :

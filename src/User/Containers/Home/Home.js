@@ -9,35 +9,70 @@ import HomePlayers from "../../Components/home-players/home-players";
 import Footer from "../../Components/footer/footer";
 import { Modal } from "react-bootstrap";
 import Image1 from '../../Assets/Images/PlayerCard/image1.png'
-import Api from '../../../api/'
-import { SlotActions } from '../../../api/actions'
+import { getFeatureCourts } from '../../../api/endpoints/court'
+import { filteringSlots } from '../../../api/endpoints/slots'
 
 
 const Home = () => {
     const [showInvitePlayerModal, setShowInvitePlayerModal] = useState(false)
     const [params, setParams] = useState({})
     const [slots, setSlots] = useState([])
+    const [featuredCourts, setFeaturedCourts] = useState([])
 
 
     useEffect(() => {
-        const param = localStorage.getItem('slotSearch')
+        const param = sessionStorage.getItem('slotSearch')
         if (param == "{}") {
-            // search({})
+            search({
+                date: undefined,
+                time: undefined,
+                city: undefined,
+                state: undefined,
+                sport: undefined,
+                bookingType: undefined
+            })
+            setParams({
+                date: undefined,
+                time: undefined,
+                city: undefined,
+                state: undefined,
+                sport: undefined,
+                bookingType: undefined
+            })
         } else {
             let params = JSON.parse(param)
             setParams(params)
-            // search(params)
+            search(params)
         }
+        getFeaturedCourts({
+            state: undefined,
+            city: undefined,
+            sport: undefined
+        })
     }, [])
 
     const search = (param) => {
-        Api.slot(SlotActions.FILTERING_SLOTS, param)
+        filteringSlots(param)
             .then(response => {
                 setSlots(response.data.body)
             }).catch(err => {
                 console.log(err)
             })
-        localStorage.setItem("slotSearch", JSON.stringify(param))
+        getFeaturedCourts({
+            state: params.state,
+            city: params.city,
+            sport: params.sport
+        })
+        sessionStorage.setItem("slotSearch", JSON.stringify(param))
+    }
+
+    const getFeaturedCourts = (params) => {
+        getFeatureCourts(params)
+            .then(response => {
+                setFeaturedCourts(response.data)
+            }).catch(err => {
+                setFeaturedCourts([])
+            })
     }
     
     return(
@@ -49,7 +84,7 @@ const Home = () => {
                 { slots.length > 0 ?
                     <HomeSlots slots={slots} />
                 : null }
-                <HomeFeaturedCourts />
+                <HomeFeaturedCourts featuredCourts={featuredCourts} />
                 <HomePlayers/>
             </div>
         </div>

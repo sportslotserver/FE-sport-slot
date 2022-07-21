@@ -23,12 +23,6 @@ function Account(){
         })
     }, [])
 
-    useEffect(() => {
-        if (player) {
-            console.log('da vidimo podaci za igraca: ', player)
-        }
-    }, [player])
-
     const updatePlayerData = (data) => {
         data.id = player?.id
         Api.user(PlayerActions.UPDATE_PLAYER_PROFILE, data).then(response => {
