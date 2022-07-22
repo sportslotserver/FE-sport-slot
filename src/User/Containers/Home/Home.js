@@ -11,6 +11,7 @@ import { Modal } from "react-bootstrap";
 import Image1 from '../../Assets/Images/PlayerCard/image1.png'
 import { getFeatureCourts } from '../../../api/endpoints/court'
 import { filteringSlots } from '../../../api/endpoints/slots'
+import { getSlotPlayers } from '../../../api/endpoints/user'
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
     const [params, setParams] = useState({})
     const [slots, setSlots] = useState([])
     const [featuredCourts, setFeaturedCourts] = useState([])
+    const [players, setPlayers] = useState([])
 
 
     useEffect(() => {
@@ -39,16 +41,16 @@ const Home = () => {
                 sport: undefined,
                 bookingType: undefined
             })
+            getPlayers({
+                city: undefined,
+                state: undefined,
+                sport: undefined
+            })
         } else {
             let params = JSON.parse(param)
             setParams(params)
             search(params)
         }
-        getFeaturedCourts({
-            state: undefined,
-            city: undefined,
-            sport: undefined
-        })
     }, [])
 
     const search = (param) => {
@@ -59,9 +61,14 @@ const Home = () => {
                 console.log(err)
             })
         getFeaturedCourts({
-            state: params.state,
-            city: params.city,
-            sport: params.sport
+            state: param.state,
+            city: param.city,
+            sport: param.sport
+        })
+        getPlayers({
+            city: param.city,
+            state: param.state,
+            sport: param.sport
         })
         sessionStorage.setItem("slotSearch", JSON.stringify(param))
     }
@@ -75,6 +82,15 @@ const Home = () => {
             })
     }
     
+    const getPlayers = (params) => {
+        getSlotPlayers(params)
+            .then(response => {
+                setPlayers(response.data)
+            }).catch(err => {
+                throw new Error(err)
+            })
+    }
+
     return(
         <>
         <HomeSlider/>
@@ -85,7 +101,7 @@ const Home = () => {
                     <HomeSlots slots={slots} />
                 : null }
                 <HomeFeaturedCourts featuredCourts={featuredCourts} />
-                <HomePlayers/>
+                <HomePlayers players={players} />
             </div>
         </div>
         </>
