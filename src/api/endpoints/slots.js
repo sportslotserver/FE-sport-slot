@@ -12,7 +12,7 @@ export const filteringSlots = async (data) => {
 
 export const getCourtSlotInfo = async (data) => {
     try {
-        return await axios.get(`${Config.baseURL}${Routes.GET_SLOT_INFO}/${data.court_id}/${data.id}/${data.player_id}/${data.reservation_id}`)
+        return await axios.get(`${Config.baseURL}${Routes.GET_SLOT_INFO}/${data?.court_id}/${data?.id}/${data?.player_id}/${data?.reservation_id}`)
     } catch (error) {
         throw new Error('Error rised while geting slot info...')
     }
@@ -31,5 +31,13 @@ export const directBook = async (data) => {
         return await axios.post(`${Config.baseURL}${Routes.DIRECT_BOOK}`, data)
     } catch (error) {
         throw new Error('Error rised while direct booking...')
+    }
+}
+
+export const getAdminPlayerSlots = async (data) => {
+    try {
+        return await axios.get(`${Config.baseURL}${Routes.GET_ADMIN_PLAYER_SLOTS}/${data?.player_id}`)
+    } catch (error) {
+        throw new Error('Error rised while geting slot info...')
     }
 }

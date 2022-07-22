@@ -52,7 +52,7 @@ function App() {
           <Route path="/selected-profile" element={<PreviewProfile/>}/>
           <Route path="/owner-admin-courts" element={<OwnerAdminCourts/>}/>
           <Route path="/manage-slots" element={<ManageCourt/>}/>
-          <Route path="/invite-player/:player_id" element={<InvitePlayer/>}/>
+          <Route path="/invite-player/:player_id/:full_name" element={<InvitePlayer/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

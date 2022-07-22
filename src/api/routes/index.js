@@ -10,5 +10,6 @@ export const Routes = Object.freeze({
     DIRECT_BOOK: '/reservation/direct-reservation',
     PLAYER_PAYMENT_METHODS: '/player/get-payment-methods',
     UPDATE_PLAYER_ACCOUNT: '/player/update-player',
-    GET_FEATURE_COURTS: '/court/get-feature-court'
+    GET_FEATURE_COURTS: '/court/get-feature-court',
+    GET_ADMIN_PLAYER_SLOTS: '/reservation/get-admin-player-reservations'
 })
