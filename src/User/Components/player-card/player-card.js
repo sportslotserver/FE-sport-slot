@@ -39,7 +39,7 @@ function PlayerCard({ direction, inviteButton, player, handleInvitePlayer, detai
                         // onClick={() => addPlayersToInvitation(player.id)}
                         >Invite to slot</button>
                         :
-                        <Link className="player-card-button margin-top-20" to={`/invite-player/${player.id}`}>Invite to slot</Link>
+                        <Link className="player-card-link margin-top-20" to={`/invite-player/${player.id}`}>Invite to slot</Link>
                     }
                     </>
                 }

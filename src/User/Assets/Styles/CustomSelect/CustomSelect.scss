@@ -1,0 +1,66 @@
+$inputBorderColor: #D2D2D1;
+$secondaryTextColor: #A7A6A6;
+$headingColor: #EF6723;
+
+.custom-select-container{
+    width: 230px;
+}
+.custom-select-input-container{
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-size: 22px;
+    font-weight: 300;
+    list-style-type: none;
+    border-width: 1px;
+    border-color: $inputBorderColor;
+    border-style: solid;
+    border-radius: 15px;
+    color: $secondaryTextColor;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+.custom-select-options-container{
+    width: 230px;
+    background-color: white;
+    position: absolute;
+    z-index: 999;
+    margin-top: 5px;
+    border-bottom: 1px solid $inputBorderColor;
+}
+.custom-select-option{
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-size: 22px;
+    font-weight: 300;
+    list-style-type: none;
+    border-width: 1px;
+    border-color: $inputBorderColor;
+    border-style: solid;
+    color: $secondaryTextColor;
+    border-bottom: none;
+    text-align: center;
+    cursor: pointer;
+}
+.custom-select-option-selected{
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-size: 22px;
+    font-weight: bold;
+    list-style-type: none;
+    border-width: 1px;
+    border-color: $inputBorderColor;
+    border-style: solid;
+    color: $headingColor;
+    text-align: center;
+    cursor: pointer;
+}
