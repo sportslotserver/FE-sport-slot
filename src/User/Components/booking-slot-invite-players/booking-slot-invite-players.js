@@ -7,7 +7,7 @@ import { Search } from "react-bootstrap-icons";
 import Api from '../../../api/'
 import { PlayerActions } from '../../../api/actions';
 
-function BookingSlotInvitePlayers({ addPlayersToInvitation, players }){
+function BookingSlotInvitePlayers({ addPlayersToInvitation, players, invitedPlayers }){
 
     console.log('da li su stigli: ', players)
 
@@ -15,24 +15,24 @@ function BookingSlotInvitePlayers({ addPlayersToInvitation, players }){
     // const pageRangeDisplayed = 3
     // const [itemsCountPerPage,setItemsCountPerPage] = useState(5)
 
-    // const [players, setPlayers] = useState([])
+    //const [players1, setPlayers] = useState([])
 
     // const [displayedItems, setDisplayeditems] = useState([])
 
-    // const getPlayers = () => {
-    //     Api.user(PlayerActions.GET_ALL_PLAYERS)
-    //         .then(response => {
-    //         console.log(response)
-    //         setPlayers(response.data)
-    //     }).catch(err => {
-    //         throw new Error(err)
-    //     })
-    // }
+    /*const getPlayers = () => {
+    Api.user(PlayerActions.GET_ALL_PLAYERS)
+            .then(response => {
+            console.log(response)
+            setPlayers(response.data)
+        }).catch(err => {
+            throw new Error(err)
+        })
+     }
 
-    // useEffect(()=>{
-    //     if(players.length === 0)
-    //         getPlayers()
-    // },[players])
+     useEffect(()=>{
+         if(players1.length === 0)
+             getPlayers()
+     },[players1])*/
     
 
     // useEffect(()=>{
@@ -53,7 +53,7 @@ function BookingSlotInvitePlayers({ addPlayersToInvitation, players }){
         <div className="invite-players-container">
             {
                 players?.map((player, index) => 
-                    <PlayerCard key={index} player={player} direction={"horizontal"} details={false} addPlayersToInvitation={addPlayersToInvitation}/>
+                    <PlayerCard key={index} player={player} direction={"horizontal"} details={false} addPlayersToInvitation={addPlayersToInvitation} directInvite={true} invited={invitedPlayers.indexOf(player.id) !== -1}/>
                 )
             }
         </div>

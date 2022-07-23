@@ -24,7 +24,8 @@ const Home = () => {
 
     useEffect(() => {
         const param = sessionStorage.getItem('slotSearch')
-        if (param == "{}") {
+        console.log(param)
+        if (param == null) {
             search({
                 date: undefined,
                 time: undefined,

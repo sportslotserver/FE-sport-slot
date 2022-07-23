@@ -44,13 +44,23 @@ $cardBorderColor: rgb(237,237,237);
 }
 .player-card-button{
     height: 30px;
+    width: 120px;
     background-color: $inviteButtonColor;
     border-radius: 15px;
     border: 1px solid $inviteButtonColor;
     font-size: 16px;
-    padding-left: 15px;
-    padding-right: 15px;
     color: $secondaryTextColor;
+    text-decoration: none;
+    padding-top: 2px;
+}
+.player-card-button-invited{
+    height: 30px;
+    width: 120px;
+    background-color: $buttonColor;
+    border-radius: 15px;
+    border: 1px solid $inviteButtonColor;
+    font-size: 16px;
+    color: white;
     text-decoration: none;
     padding-top: 2px;
 }

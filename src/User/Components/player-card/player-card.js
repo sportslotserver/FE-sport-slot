@@ -5,7 +5,7 @@ import {ThreeDotsVertical} from "react-bootstrap-icons"
 import { setCapitalLetter } from '../../../utils/capital-letter'
 import { Link } from "react-router-dom";
 
-function PlayerCard({ direction, inviteButton, player, handleInvitePlayer, details, addPlayersToInvitation, directInvite }){
+function PlayerCard({ direction, inviteButton, player, handleInvitePlayer, details, addPlayersToInvitation, directInvite, invited }){
     
     return(
         <div className={direction === "vertical" ? "player-card-container-vertical" : "player-card-container-horizontal"}>
@@ -35,9 +35,18 @@ function PlayerCard({ direction, inviteButton, player, handleInvitePlayer, detai
                     <>
                     {
                         directInvite ?
-                        <button className={direction === "vertical" ? "player-card-button margin-top-20":"player-card-button"} 
-                        // onClick={() => addPlayersToInvitation(player.id)}
-                        >Invite to slot</button>
+                        <>
+                        {
+                            invited ?
+                            <button className={direction === "vertical" ? "player-card-button margin-top-20":"player-card-button-invited"} 
+                            //onClick={() => addPlayersToInvitation(player.id)}
+                            >Invited</button>
+                            :
+                            <button className={direction === "vertical" ? "player-card-button margin-top-20":"player-card-button"} 
+                            onClick={() => addPlayersToInvitation(player.id)}
+                            >Invite to slot</button>
+                        }
+                        </>
                         :
                         <Link className="player-card-link margin-top-20" to={`/invite-player/${player.id}/${player?.full_name}`}>Invite to slot</Link>
                     }

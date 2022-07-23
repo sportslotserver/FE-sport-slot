@@ -1,9 +1,8 @@
 import '../../Assets/Styles/BookingSlotJoinTheGruop/BookingSlotJoinTheGroup.scss'
 import Icon from '../../Assets/Images/SlotTypes/icon_2.png'
 
-const BookingSlotJoinTheGroup = ({ data }) => {
+const BookingSlotJoinTheGroup = ({ slot, reservation, setStep }) => {
 
-    const { slot, reservation, setStep } = data
 
     return(
         <div className="booking-slot-join-the-group-container">

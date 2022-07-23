@@ -163,6 +163,9 @@ input, select{
   background-color: white;
   color: $buttonColor;
 }
+.green-button:disabled{
+  opacity: 0.5;
+}
 .white-button{
   padding-left: 30px;
   padding-right: 30px;
